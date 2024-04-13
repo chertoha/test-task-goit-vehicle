@@ -1,6 +1,6 @@
 {
   "name": "test-task-goit-vehicle",
-  "homepage": "https://chertoha.github.io/test-task-goit-vehicle",
+  "homepage": "https://chertoha.github.io/test-task-goit-vehicle/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "gen": "node gen.js -f ./src/components -c"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
