@@ -37,7 +37,7 @@ const routes = [
 ];
 
 const router = createBrowserRouter(routes, {
-  //   basename: "/test-task-goit-vehicle",
+  basename: "/test-task-goit-vehicle",
 });
 
 export default router;
