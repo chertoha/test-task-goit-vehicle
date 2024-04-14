@@ -1,5 +1,11 @@
+import Catalog from "components/Catalog";
+
 const CatalogPage = () => {
-  return <div>Catalog Page</div>;
+  return (
+    <>
+      <Catalog />
+    </>
+  );
 };
 
 export default CatalogPage;
