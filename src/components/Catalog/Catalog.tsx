@@ -2,6 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+// import LocationLabel from "components/UIKit/LocationLabel";
+
 // import ReviewsLabel from "components/UIKit/ReviewsLabel/ReviewsLabel";
 
 const Catalog = () => {
@@ -31,6 +33,8 @@ const Catalog = () => {
               rate={4.4}
               count={2}
             /> */}
+
+            {/* <LocationLabel location="Kyiv, Ukraine" /> */}
           </div>
         </div>
       </div>
