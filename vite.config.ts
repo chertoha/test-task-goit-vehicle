@@ -22,7 +22,7 @@ export default defineConfig({
       //   replacement: resolve(__dirname, "src/assets/"),
       // },
 
-      ...["components", "assets", "utils"].map(source => ({
+      ...["pages", "config", "components", "assets", "utils"].map(source => ({
         find: source,
         replacement: resolve(__dirname, `./src/${source}/`),
       })),

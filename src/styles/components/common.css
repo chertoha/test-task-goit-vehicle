@@ -1,3 +1,7 @@
 .container-default {
   @apply container mx-auto px-4 md:px-40 xl:px-16;
 }
+
+.nav.active {
+  @apply text-accent;
+}
