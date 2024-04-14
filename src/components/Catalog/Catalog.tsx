@@ -2,6 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+// import FilterCheckbox from "components/UIKit/FilterCheckbox";
+
 // import LocationLabel from "components/UIKit/LocationLabel";
 
 // import ReviewsLabel from "components/UIKit/ReviewsLabel/ReviewsLabel";
@@ -35,6 +37,12 @@ const Catalog = () => {
             /> */}
 
             {/* <LocationLabel location="Kyiv, Ukraine" /> */}
+
+            {/* <FilterCheckbox
+              iconKey="airConditioner"
+              title="AC"
+              name="equipment"
+            /> */}
           </div>
         </div>
       </div>
