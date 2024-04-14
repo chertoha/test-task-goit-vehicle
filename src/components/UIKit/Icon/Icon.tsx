@@ -1,24 +1,24 @@
-import { ReactComponent as AdultsIcon } from "/public/images/icons/equipment/toilet.svg";
-import { ReactComponent as ACIcon } from "/public/images/icons/equipment/ac.svg";
-import { ReactComponent as AirIcon } from "/public/images/icons/equipment/air.svg";
-import { ReactComponent as BedsIcon } from "/public/images/icons/equipment/beds.svg";
-import { ReactComponent as CDIcon } from "/public/images/icons/equipment/cd.svg";
-import { ReactComponent as FreezerIcon } from "/public/images/icons/equipment/freezer.svg";
-import { ReactComponent as GasIcon } from "/public/images/icons/equipment/gas.svg";
-import { ReactComponent as HobIcon } from "/public/images/icons/equipment/hob.svg";
-import { ReactComponent as KitchenIcon } from "/public/images/icons/equipment/kitchen.svg";
-import { ReactComponent as MicrowaveIcon } from "/public/images/icons/equipment/microwave.svg";
-import { ReactComponent as PetrolIcon } from "/public/images/icons/equipment/petrol.svg";
-import { ReactComponent as RadioIcon } from "/public/images/icons/equipment/radio.svg";
-import { ReactComponent as ShowerIcon } from "/public/images/icons/equipment/shower.svg";
-import { ReactComponent as ToiletIcon } from "/public/images/icons/equipment/toilet.svg";
-import { ReactComponent as TransmissionIcon } from "/public/images/icons/equipment/transmission.svg";
-import { ReactComponent as TVIcon } from "/public/images/icons/equipment/tv.svg";
-import { ReactComponent as WaterIcon } from "/public/images/icons/equipment/water.svg";
-import { ReactComponent as ChildrenIcon } from "/public/images/icons/equipment/children.svg";
-import { ReactComponent as AlcoveIcon } from "/public/images/icons/type/alcove.svg";
-import { ReactComponent as IntagratedIcon } from "/public/images/icons/type/intagrated.svg";
-import { ReactComponent as VanIcon } from "/public/images/icons/type/van.svg";
+import { ReactComponent as ACIcon } from "assets/icons/equipment/ac.svg";
+import { ReactComponent as AdultsIcon } from "assets/icons/equipment/toilet.svg";
+import { ReactComponent as AirIcon } from "assets/icons/equipment/air.svg";
+import { ReactComponent as BedsIcon } from "assets/icons/equipment/beds.svg";
+import { ReactComponent as CDIcon } from "assets/icons/equipment/cd.svg";
+import { ReactComponent as FreezerIcon } from "assets/icons/equipment/freezer.svg";
+import { ReactComponent as GasIcon } from "assets/icons/equipment/gas.svg";
+import { ReactComponent as HobIcon } from "assets/icons/equipment/hob.svg";
+import { ReactComponent as KitchenIcon } from "assets/icons/equipment/kitchen.svg";
+import { ReactComponent as MicrowaveIcon } from "assets/icons/equipment/microwave.svg";
+import { ReactComponent as PetrolIcon } from "assets/icons/equipment/petrol.svg";
+import { ReactComponent as RadioIcon } from "assets/icons/equipment/radio.svg";
+import { ReactComponent as ShowerIcon } from "assets/icons/equipment/shower.svg";
+import { ReactComponent as ToiletIcon } from "assets/icons/equipment/toilet.svg";
+import { ReactComponent as TransmissionIcon } from "assets/icons/equipment/transmission.svg";
+import { ReactComponent as TVIcon } from "assets/icons/equipment/tv.svg";
+import { ReactComponent as WaterIcon } from "assets/icons/equipment/water.svg";
+import { ReactComponent as ChildrenIcon } from "assets/icons/equipment/children.svg";
+import { ReactComponent as AlcoveIcon } from "assets/icons/type/alcove.svg";
+import { ReactComponent as IntagratedIcon } from "assets/icons/type/intagrated.svg";
+import { ReactComponent as VanIcon } from "assets/icons/type/van.svg";
 
 export const Icon = {
   adults: AdultsIcon,

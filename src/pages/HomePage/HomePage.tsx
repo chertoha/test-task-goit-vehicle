@@ -1,5 +1,8 @@
 // import React from "react";
-import { Icon } from "../../components/UIKit/Icon/Icon";
+// import { Icon } from "../../components/UIKit/Icon";
+
+// import Icon from "components/UIKit/Icon/Icon";
+import { Icon } from "components/UIKit/Icon/Icon";
 
 const TestIcon = Icon["van"];
 
