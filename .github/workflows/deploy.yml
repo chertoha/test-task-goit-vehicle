@@ -18,8 +18,8 @@ jobs:
         run: npm run lint
 
       - name: Install and Build
-        # env:
-        # REACT_APP_API_BASE_URL: ${{secrets.REACT_APP_API_BASE_URL}}
+        env:
+          VITE_API_URL: ${{vars.VITE_API_URL}}
         run: npm run build
 
       # - name: Testing

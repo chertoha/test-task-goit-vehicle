@@ -1,7 +1,9 @@
+import React from "react";
 // import { lazy } from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
+import HomePage from "../pages/HomePage";
 
-// const HomePage = lazy(() => import("./pages/HomePage"));
+// const HomePage = React.lazy(() => import("./pages/HomePage"));
 // const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
 // const ExercisePage = lazy(() => import("./pages/ExercisePage"));
 
@@ -22,7 +24,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: <div>Home page</div>,
+        element: <HomePage />,
       },
       {
         path: ROUTES.CATALOG,
