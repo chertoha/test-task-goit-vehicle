@@ -7,7 +7,7 @@ const HomePage = () => {
   if (!data) return null;
   console.log(data);
 
-  return <div>Home page</div>;
+  return <div className="main-text">Home page</div>;
 };
 
 export default HomePage;
