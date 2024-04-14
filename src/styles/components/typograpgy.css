@@ -1,0 +1,23 @@
+.heading-1 {
+  @apply font-semibold text-[20px] md:text-[24px] leading-tight;
+}
+
+.heading-2 {
+  @apply font-semibold text-[16px] md:text-[20px] leading-tight;
+}
+
+.heading-3 {
+  @apply font-semibold text-[14px] md:text-[18px] leading-snug;
+}
+
+.body-1 {
+  @apply text-[14px] md:text-[16px] leading-normal;
+}
+
+.label {
+  @apply font-medium text-[14px] md:text-[16px] leading-tight;
+}
+
+.main-text {
+  @apply md:text-[16px] text-[14px] leading-normal text-dark;
+}
