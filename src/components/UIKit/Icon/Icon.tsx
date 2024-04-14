@@ -1,5 +1,5 @@
 import { ReactComponent as ACIcon } from "assets/icons/equipment/ac.svg";
-import { ReactComponent as AdultsIcon } from "assets/icons/equipment/toilet.svg";
+import { ReactComponent as AdultsIcon } from "assets/icons/equipment/adults.svg";
 import { ReactComponent as AirIcon } from "assets/icons/equipment/air.svg";
 import { ReactComponent as BedsIcon } from "assets/icons/equipment/beds.svg";
 import { ReactComponent as CDIcon } from "assets/icons/equipment/cd.svg";

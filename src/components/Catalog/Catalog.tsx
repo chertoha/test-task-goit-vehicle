@@ -1,8 +1,9 @@
-import Modal from "components/UIKit/Modal";
-import { useModal } from "hooks/useModal";
+// import Chip from "components/UIKit/Chip";
+// import Modal from "components/UIKit/Modal";
+// import { useModal } from "hooks/useModal";
 
 const Catalog = () => {
-  const { open, isOpen, close } = useModal();
+  // const { open, isOpen, close } = useModal();
 
   return (
     <>
@@ -10,14 +11,20 @@ const Catalog = () => {
         <div className="flex items-start gap-x-16 h-[600px]">
           <aside className="outline outline-green-700 w-[360px]">
             Filter
-            <button onClick={open}>CLICK</button>
+            {/* <button onClick={open}>CLICK</button> */}
           </aside>
 
-          <div className="outline outline-cyan-700 w-full">List</div>
+          <div className="outline outline-cyan-700 w-full ">
+            {/* <Chip
+              iconKey="adults"
+              title="adults"
+              value={2}
+            /> */}
+          </div>
         </div>
       </div>
 
-      <Modal
+      {/* <Modal
         close={close}
         isOpen={isOpen}
       >
@@ -26,7 +33,7 @@ const Catalog = () => {
           qui esse ratione aperiam consectetur reprehenderit ipsa ipsum eius
           obcaecati rem maiores expedita reiciendis unde cumque, consequuntur,
         </div>
-      </Modal>
+      </Modal> */}
     </>
   );
 };
