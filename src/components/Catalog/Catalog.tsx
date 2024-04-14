@@ -2,6 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+import FilterRadio from "components/UIKit/FilterRadio";
+
 // import FilterCheckbox from "components/UIKit/FilterCheckbox";
 
 // import LocationLabel from "components/UIKit/LocationLabel";
@@ -40,8 +42,24 @@ const Catalog = () => {
 
             {/* <FilterCheckbox
               iconKey="airConditioner"
-              title="AC"
+              title="Fully Integrated"
               name="equipment"
+            /> */}
+
+            {/* <FilterRadio
+              iconKey="van"
+              name="type"
+              title="Van"
+            />
+            <FilterRadio
+              iconKey="intagrated"
+              name="type"
+              title="Fully Integrated"
+            />
+            <FilterRadio
+              iconKey="alcove"
+              name="type"
+              title="Alcove"
             /> */}
           </div>
         </div>
