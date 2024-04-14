@@ -1,13 +1,18 @@
 // import React from "react";
-import { useGetAdvertsQuery } from "../../redux/adverts/advertsApi";
+import { Icon } from "../../components/UIKit/Icon/Icon";
+
+const TestIcon = Icon["van"];
 
 const HomePage = () => {
-  const { data } = useGetAdvertsQuery();
-
-  if (!data) return null;
-  console.log(data);
-
-  return <div className="main-text">Home page</div>;
+  return (
+    <div className="main-text  text-accent">
+      Home page
+      <TestIcon
+        width={20}
+        height={20}
+      />
+    </div>
+  );
 };
 
 export default HomePage;
