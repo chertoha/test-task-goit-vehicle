@@ -2,6 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+// import ReviewsLabel from "components/UIKit/ReviewsLabel/ReviewsLabel";
+
 const Catalog = () => {
   // const { open, isOpen, close } = useModal();
 
@@ -24,6 +26,11 @@ const Catalog = () => {
             {/* <button className="button-primary w-[170px]">Search</button>
             <br />
             <button className="button-secondary w-[145px]">Load more</button> */}
+
+            {/* <ReviewsLabel
+              rate={4.4}
+              count={2}
+            /> */}
           </div>
         </div>
       </div>
