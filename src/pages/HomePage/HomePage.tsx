@@ -1,11 +1,16 @@
 // import React from "react";
-// import { Icon } from "../../components/UIKit/Icon/Icon";
+import { Icon } from "../../components/UIKit/Icon/Icon";
+
+const TestIcon = Icon["van"];
 
 const HomePage = () => {
   return (
-    <div className="main-text">
+    <div className="main-text  text-accent">
       Home page
-      {/* <Icon /> */}
+      <TestIcon
+        width={20}
+        height={20}
+      />
     </div>
   );
 };
