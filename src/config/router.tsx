@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 // import { lazy } from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
