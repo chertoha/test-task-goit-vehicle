@@ -34,7 +34,7 @@ const FilterCheckbox: FC<IFilterCheckboxProps> = ({ iconKey, title, name }) => {
         height={32}
       />
 
-      {title}
+      <span className="text-center">{title}</span>
     </label>
   );
 };
