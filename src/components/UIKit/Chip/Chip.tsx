@@ -20,7 +20,7 @@ const Chip: FC<IChipProps> = ({ iconKey, title, value }) => {
       )}
 
       <span className="label">
-        {value !== 1 && value} {title}
+        {value !== 1 && value} <span className="capitalize">{title}</span>
       </span>
     </div>
   );

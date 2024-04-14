@@ -29,12 +29,14 @@ const FilterCheckbox: FC<IFilterCheckboxProps> = ({ iconKey, title, name }) => {
         onClick={toggle}
       />
 
-      <LabelIcon
-        width={32}
-        height={32}
-      />
+      {LabelIcon && (
+        <LabelIcon
+          width={32}
+          height={32}
+        />
+      )}
 
-      <span className="text-center">{title}</span>
+      <span className="text-center capitalize">{title}</span>
     </label>
   );
 };

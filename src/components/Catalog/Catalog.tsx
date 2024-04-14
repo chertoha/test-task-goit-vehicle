@@ -2,7 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
-import FilterRadio from "components/UIKit/FilterRadio";
+// import FilterRadio from "components/UIKit/FilterRadio";
+// import VehicleCard from "components/VehicleCard";
 
 // import FilterCheckbox from "components/UIKit/FilterCheckbox";
 
@@ -17,7 +18,7 @@ const Catalog = () => {
     <>
       <div className="container-default outline outline-fuchsia-400">
         <div className="flex items-start gap-x-16 h-[600px]">
-          <aside className="outline outline-green-700 w-[360px]">
+          <aside className="shrink-0 outline outline-green-700 w-[360px]">
             Filter
             {/* <button onClick={open}>CLICK</button> */}
           </aside>
@@ -61,6 +62,8 @@ const Catalog = () => {
               name="type"
               title="Alcove"
             /> */}
+
+            {/* <VehicleCard /> */}
           </div>
         </div>
       </div>
