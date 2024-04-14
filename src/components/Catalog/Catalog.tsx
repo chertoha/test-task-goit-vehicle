@@ -20,6 +20,10 @@ const Catalog = () => {
               title="adults"
               value={2}
             /> */}
+
+            {/* <button className="button-primary w-[170px]">Search</button>
+            <br />
+            <button className="button-secondary w-[145px]">Load more</button> */}
           </div>
         </div>
       </div>

@@ -1,0 +1,11 @@
+.button-primary,
+.button-primary[type="button"],
+.button-primary[type="submit"] {
+  @apply text-[14px] md:text-[16px] leading-normal font-medium text-white tracking-tighter py-4 bg-accent hover:bg-accent-hovered transition-colors duration-300 ease-in-out rounded-full;
+}
+
+.button-secondary,
+.button-secondary[type="button"],
+.button-secondary[type="submit"] {
+  @apply text-[14px] md:text-[16px] leading-normal font-medium text-black tracking-tighter py-4  transition-colors duration-300 ease-in-out rounded-full border border-dark/20 hover:border-accent;
+}

@@ -27,7 +27,7 @@ export default {
         white: "#FFFFFF",
         dark: "#475467",
         accent: "#E44848",
-        "accent-hovered": "#E44848",
+        "accent-hovered": "#D84343",
         yellow: "#FFC531",
         grey: "#F2F4F7",
         intput: "#F7F7F7",
