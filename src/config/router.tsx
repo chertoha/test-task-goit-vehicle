@@ -1,11 +1,8 @@
-// import React from "react";
-// import { lazy } from "react";
-import { Outlet, createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-
-// const HomePage = React.lazy(() => import("./pages/HomePage"));
-// const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
-// const ExercisePage = lazy(() => import("./pages/ExercisePage"));
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "components/Layout";
+import CatalogPage from "pages/CatalogPage";
+import HomePage from "pages/HomePage";
+import FavoritesPages from "pages/Favorites/FavoritesPages";
 
 export const ROUTES = {
   HOME: "/",
@@ -16,11 +13,7 @@ export const ROUTES = {
 const routes = [
   {
     path: ROUTES.HOME,
-    element: (
-      <div>
-        <Outlet />
-      </div>
-    ),
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -28,11 +21,11 @@ const routes = [
       },
       {
         path: ROUTES.CATALOG,
-        element: <div>Catalog page</div>,
+        element: <CatalogPage />,
       },
       {
         path: ROUTES.FAVORITES,
-        element: <div>Favorites page</div>,
+        element: <FavoritesPages />,
       },
     ],
   },
