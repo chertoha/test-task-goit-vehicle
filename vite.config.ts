@@ -7,19 +7,6 @@ import { resolve } from "path";
 export default defineConfig({
   plugins: [react(), svgr()],
 
-  // resolve: {
-  //   alias: {
-  //     // src: "/src",
-  //     components: "./src/components",
-  //   },
-  // },
-
-  // resolve: {
-  //   alias: {
-  //     components: "/components",
-  //   },
-  // },
-
   resolve: {
     alias: [
       // {
