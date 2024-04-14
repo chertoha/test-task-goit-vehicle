@@ -2,6 +2,8 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+// import RatingBar from "components/UIKit/RatingBar";
+
 // import FilterRadio from "components/UIKit/FilterRadio";
 // import VehicleCard from "components/VehicleCard";
 
@@ -64,6 +66,8 @@ const Catalog = () => {
             /> */}
 
             {/* <VehicleCard /> */}
+
+            {/* <RatingBar value={3} /> */}
           </div>
         </div>
       </div>
