@@ -16,7 +16,7 @@ const FilterCheckbox: FC<IFilterCheckboxProps> = ({ iconKey, title, name }) => {
 
   return (
     <label
-      className={`label transition-default cursor-pointer flex flex-col w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
+      className={`label transition-default cursor-pointer flex flex-col h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
         checked ? "border-accent" : "border-black/20"
       }`}
     >
@@ -26,7 +26,7 @@ const FilterCheckbox: FC<IFilterCheckboxProps> = ({ iconKey, title, name }) => {
         name={name}
         value={title}
         checked={checked}
-        onClick={toggle}
+        onChange={toggle}
       />
 
       {LabelIcon && (
