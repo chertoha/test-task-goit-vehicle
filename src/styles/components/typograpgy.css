@@ -18,6 +18,10 @@
   @apply font-medium text-[14px] md:text-[16px] leading-tight;
 }
 
+.input {
+  @apply text-[14px] md:text-[16px] leading-tight;
+}
+
 .main-text {
   @apply md:text-[16px] text-[14px] leading-normal text-dark;
 }

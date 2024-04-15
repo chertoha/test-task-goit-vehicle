@@ -30,7 +30,7 @@ export default {
         "accent-hovered": "#D84343",
         yellow: "#FFC531",
         grey: "#F2F4F7",
-        intput: "#F7F7F7",
+        input: "#F7F7F7",
       },
 
       textColor: {},
