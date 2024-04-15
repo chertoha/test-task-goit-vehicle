@@ -10,6 +10,10 @@
   @apply font-semibold text-[14px] md:text-[18px] leading-snug;
 }
 
+.heading-4 {
+  @apply font-medium text-[14px] md:text-[16px] leading-normal;
+}
+
 .body-1 {
   @apply text-[14px] md:text-[16px] leading-normal;
 }
