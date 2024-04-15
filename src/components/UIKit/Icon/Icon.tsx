@@ -41,7 +41,7 @@ export const Icon = {
   water: WaterIcon,
 
   alcove: AlcoveIcon,
-  intagrated: IntagratedIcon,
+  fullyIntegrated: IntagratedIcon,
   van: VanIcon,
 };
 
