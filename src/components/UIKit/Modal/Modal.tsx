@@ -41,7 +41,7 @@ const Modal: FC<IModalProps> = ({ children, close, isOpen }) => {
         className="fixed left-0 top-0 z-[100] h-full w-full bg-black/40 "
         onClick={onBackdropClickClose}
       >
-        <div className="absolute left-1/2 top-10 flex -translate-x-1/2   rounded-[20px]  max-h-[calc(100%-80px)] bg-white p-10">
+        <div className="absolute left-1/2 top-10 flex -translate-x-1/2 xl:w-[982px] rounded-[20px]  max-h-[calc(100%-80px)] bg-white p-10">
           <button
             className="absolute right-10 top-10 transition-all duration-300 ease-in-out hover:scale-110"
             onClick={close}

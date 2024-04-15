@@ -3,6 +3,7 @@ import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
 import Chip from "components/UIKit/Chip";
+import ShowMoreButton from "components/UIKit/ShowMoreButton";
 
 interface IVehicleCardProps {
   //...
@@ -100,13 +101,8 @@ const VehicleCard: FC<IVehicleCardProps> = () => {
           </li>
         </ul>
 
-        <div className="mt-6">
-          <button
-            type="button"
-            className="button-primary px-10"
-          >
-            Show more
-          </button>
+        <div className="mt-6 w-[166px]">
+          <ShowMoreButton title="Show more" />
         </div>
       </div>
     </div>

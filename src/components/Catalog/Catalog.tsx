@@ -1,8 +1,8 @@
 // import Chip from "components/UIKit/Chip";
 // import Modal from "components/UIKit/Modal";
-// import { useModal } from "hooks/useModal";
 
 import Filter from "components/Filter";
+import VehicleCard from "components/VehicleCard";
 
 // import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
 // import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
@@ -21,19 +21,17 @@ import Filter from "components/Filter";
 // import ReviewsLabel from "components/UIKit/ReviewsLabel/ReviewsLabel";
 
 const Catalog = () => {
-  // const { open, isOpen, close } = useModal();
-
   return (
     <>
       <div className="container-default outline outline-fuchsia-400">
         <div className="flex items-start gap-x-16 ">
           <aside className="shrink-0  w-[360px]">
-            {/* <button onClick={open}>CLICK</button> */}
-
             <Filter />
           </aside>
 
-          <div className="outline outline-cyan-700 w-full ">
+          <div className="w-full ">
+            <VehicleCard />
+
             {/* <Chip
               iconKey="adults"
               title="adults"
@@ -88,17 +86,6 @@ const Catalog = () => {
           </div>
         </div>
       </div>
-
-      {/* <Modal
-        close={close}
-        isOpen={isOpen}
-      >
-        <div className="text-3xl overflow-y-auto">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          qui esse ratione aperiam consectetur reprehenderit ipsa ipsum eius
-          obcaecati rem maiores expedita reiciendis unde cumque, consequuntur,
-        </div>
-      </Modal> */}
     </>
   );
 };
