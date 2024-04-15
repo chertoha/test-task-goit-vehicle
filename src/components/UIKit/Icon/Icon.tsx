@@ -36,7 +36,7 @@ export const Icon = {
   radio: RadioIcon,
   shower: ShowerIcon,
   toilet: ToiletIcon,
-  trasmission: TransmissionIcon,
+  transmission: TransmissionIcon,
   tv: TVIcon,
   water: WaterIcon,
 
