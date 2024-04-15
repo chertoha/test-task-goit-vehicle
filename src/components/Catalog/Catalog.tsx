@@ -83,6 +83,15 @@ const Catalog = () => {
                 IconEnd={CalendarIcon}
               />
             </div> */}
+
+            <div className="mt-[50px] mx-auto flex justify-center">
+              <button
+                type="button"
+                className="button-secondary px-8 "
+              >
+                Load more
+              </button>
+            </div>
           </div>
         </div>
       </div>
