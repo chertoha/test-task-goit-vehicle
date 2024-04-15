@@ -2,6 +2,11 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
+import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
+
+import Field from "components/UIKit/Field";
+
 // import RatingBar from "components/UIKit/RatingBar";
 
 // import FilterRadio from "components/UIKit/FilterRadio";
@@ -68,6 +73,15 @@ const Catalog = () => {
             {/* <VehicleCard /> */}
 
             {/* <RatingBar value={3} /> */}
+            {/* 
+            <div className="w-[200px]">
+              <Field
+                placeholder="Name"
+                type="text"
+                IconStart={LocationIcon}
+                IconEnd={CalendarIcon}
+              />
+            </div> */}
           </div>
         </div>
       </div>
