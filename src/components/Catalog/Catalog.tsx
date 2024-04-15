@@ -2,10 +2,12 @@
 // import Modal from "components/UIKit/Modal";
 // import { useModal } from "hooks/useModal";
 
-import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
-import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
+import Filter from "components/Filter";
 
-import Field from "components/UIKit/Field";
+// import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+// import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
+
+// import Field from "components/UIKit/Field";
 
 // import RatingBar from "components/UIKit/RatingBar";
 
@@ -24,10 +26,11 @@ const Catalog = () => {
   return (
     <>
       <div className="container-default outline outline-fuchsia-400">
-        <div className="flex items-start gap-x-16 h-[600px]">
-          <aside className="shrink-0 outline outline-green-700 w-[360px]">
-            Filter
+        <div className="flex items-start gap-x-16 ">
+          <aside className="shrink-0  w-[360px]">
             {/* <button onClick={open}>CLICK</button> */}
+
+            <Filter />
           </aside>
 
           <div className="outline outline-cyan-700 w-full ">
