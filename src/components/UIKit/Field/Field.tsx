@@ -11,8 +11,6 @@ interface IFieldProps {
 const Field: FC<IFieldProps> = ({ type, IconStart, IconEnd, placeholder }) => {
   const [isFocused, setIsFocused] = useState(false);
 
-  console.log(isFocused);
-
   return (
     <label className="block relative">
       <input
