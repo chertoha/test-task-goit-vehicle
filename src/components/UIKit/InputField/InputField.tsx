@@ -1,14 +1,19 @@
 import { FC, useState } from "react";
 import { IconValueType } from "../Icon/Icon";
 
-interface IFieldProps {
+interface IInputFieldProps {
   type: "text" | "email";
   IconStart?: IconValueType;
   IconEnd?: IconValueType;
   placeholder: string;
 }
 
-const Field: FC<IFieldProps> = ({ type, IconStart, IconEnd, placeholder }) => {
+const InputField: FC<IInputFieldProps> = ({
+  type,
+  IconStart,
+  IconEnd,
+  placeholder,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -57,4 +62,4 @@ const Field: FC<IFieldProps> = ({ type, IconStart, IconEnd, placeholder }) => {
   );
 };
 
-export default Field;
+export default InputField;
