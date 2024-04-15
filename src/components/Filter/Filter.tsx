@@ -1,4 +1,4 @@
-import Field from "components/UIKit/Field";
+import Field from "components/UIKit/InputField";
 import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
 import FilterCheckbox from "components/UIKit/FilterCheckbox";
 import FilterRadio from "components/UIKit/FilterRadio";

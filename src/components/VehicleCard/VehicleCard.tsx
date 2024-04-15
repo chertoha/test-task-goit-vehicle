@@ -3,6 +3,7 @@ import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
 import Chip from "components/UIKit/Chip";
+import ShowMoreButton from "components/UIKit/ShowMoreButton";
 
 interface IVehicleCardProps {
   //...
@@ -50,63 +51,60 @@ const VehicleCard: FC<IVehicleCardProps> = () => {
           quos quas dolor.
         </p>
 
-        <ul className="mt-6 flex flex-wrap gap-2 ">
-          <li>
-            <Chip
-              iconKey="adults"
-              title="adults"
-              value={2}
-            />
-          </li>
-
-          <li>
-            <Chip
-              iconKey="transmission"
-              title="Automatic"
-              value={1}
-            />
-          </li>
-
-          <li>
-            <Chip
-              iconKey="petrol"
-              title="petrol"
-              value={1}
-            />
-          </li>
-
-          <li>
-            <Chip
-              iconKey="kitchen"
-              title="kitchen"
-              value={1}
-            />
-          </li>
-
-          <li>
-            <Chip
-              iconKey="beds"
-              title="beds"
-              value={1}
-            />
-          </li>
-
-          <li>
-            <Chip
-              iconKey="airConditioner"
-              title="AC"
-              value={1}
-            />
-          </li>
-        </ul>
-
         <div className="mt-6">
-          <button
-            type="button"
-            className="button-primary px-10"
-          >
-            Show more
-          </button>
+          <ul className="flex flex-wrap gap-2 ">
+            <li>
+              <Chip
+                iconKey="adults"
+                title="adults"
+                value={2}
+              />
+            </li>
+
+            <li>
+              <Chip
+                iconKey="transmission"
+                title="Automatic"
+                value={1}
+              />
+            </li>
+
+            <li>
+              <Chip
+                iconKey="petrol"
+                title="petrol"
+                value={1}
+              />
+            </li>
+
+            <li>
+              <Chip
+                iconKey="kitchen"
+                title="kitchen"
+                value={1}
+              />
+            </li>
+
+            <li>
+              <Chip
+                iconKey="beds"
+                title="beds"
+                value={1}
+              />
+            </li>
+
+            <li>
+              <Chip
+                iconKey="airConditioner"
+                title="AC"
+                value={1}
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6 w-[166px]">
+          <ShowMoreButton title="Show more" />
         </div>
       </div>
     </div>
