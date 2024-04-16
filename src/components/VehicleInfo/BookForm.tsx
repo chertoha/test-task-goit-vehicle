@@ -1,6 +1,21 @@
 import Field from "components/UIKit/InputField";
 import AreaField from "components/UIKit/AreaField";
 import DateRangePicker from "components/UIKit/DateRangePicker";
+import { Formik } from "formik";
+
+type BookFormValues = {
+  name: string;
+  email: string;
+  date: [Date | null, Date | null];
+  comment: string;
+};
+
+const initialValues: BookFormValues = {
+  name: "",
+  email: "",
+  date: [null, null],
+  comment: "",
+};
 
 const BookForm = () => {
   return (
@@ -10,30 +25,41 @@ const BookForm = () => {
         Stay connected! We are always ready to help you.
       </p>
 
-      <form className="mt-6">
-        <div className="space-y-[14px]">
-          <Field
-            type="text"
-            placeholder="Name"
-          />
+      <Formik
+        initialValues={initialValues}
+        onSubmit={}
+        validationSchema={}
+      >
+        {({ submitForm }) => (
+          <form
+            className="mt-6"
+            onSubmit={submitForm}
+          >
+            <div className="space-y-[14px]">
+              <Field
+                type="text"
+                placeholder="Name"
+              />
 
-          <Field
-            type="email"
-            placeholder="Email"
-          />
+              <Field
+                type="email"
+                placeholder="Email"
+              />
 
-          <DateRangePicker name="date" />
+              <DateRangePicker name="date" />
 
-          <AreaField placeholder="Comment" />
-        </div>
+              <AreaField placeholder="Comment" />
+            </div>
 
-        <button
-          type="submit"
-          className="button-primary mt-10 px-[60px]"
-        >
-          Send
-        </button>
-      </form>
+            <button
+              type="submit"
+              className="button-primary mt-10 px-[60px]"
+            >
+              Send
+            </button>
+          </form>
+        )}
+      </Formik>
     </div>
   );
 };

@@ -1,0 +1,26 @@
+import * as Yup from "yup";
+import { emailRegexp } from "./validationPatterns";
+
+export const bookFormSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Name must have not less than 3 symbols")
+    .max(50, "Name must have not more than 50 symbols")
+    .required("Please, write your name")
+    .trim(),
+
+  email: Yup.string()
+    .matches(emailRegexp, {
+      message: "Not valid email!",
+    })
+    .max(320, "Email must have not more than 320 symbols")
+    .required("Please, write your email"),
+
+  date: Yup.tuple([Yup.date(), Yup.date()]).required(
+    "Please select date range"
+  ),
+
+  comment: Yup.string()
+    .min(10, "Comment must have not less than 10 symbols")
+    .max(300, "Name must have not more than 300 symbols")
+    .required("Please, write your comment"),
+});
