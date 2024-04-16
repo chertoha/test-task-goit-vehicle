@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Icon, IconKeyType } from "../Icon/Icon";
+import { useField } from "formik";
 
 interface IFilterRadioProps {
   name: string;
@@ -7,27 +8,22 @@ interface IFilterRadioProps {
   title: string;
 }
 
-const FilterRadio: FC<IFilterRadioProps> = ({ iconKey, title, name }) => {
-  const LabelIcon = Icon[iconKey as IconKeyType];
+const FilterRadio: FC<IFilterRadioProps> = ({ iconKey, title, ...props }) => {
+  const [field, { value }] = useField(props);
 
-  // const [checked, setChecked] = useState(false);
+  const LabelIcon = Icon[iconKey as IconKeyType];
 
   return (
     <label
-      className={`label transition-default cursor-pointer flex flex-col w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 `}
-      // className={`label transition-default cursor-pointer flex flex-col w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
-      //   checked ? "border-accent" : "border-black/20"
-      // }`}
-      // onClick={() => {
-      //   setChecked(true);
-      // }}
+      className={`label transition-default cursor-pointer flex flex-col w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
+        value === iconKey ? "border-accent" : "border-black/20"
+      } `}
     >
       <input
         hidden
         type="radio"
-        name={name}
-        value={title}
-        // checked={checked}
+        {...field}
+        value={iconKey}
       />
 
       {LabelIcon && (
