@@ -85,7 +85,7 @@ const Catalog = () => {
               />
             </div> */}
 
-            <DateRangePicker name="date" />
+            {/* <DateRangePicker name="date" /> */}
 
             <div className="mt-[50px] mx-auto flex justify-center">
               <button

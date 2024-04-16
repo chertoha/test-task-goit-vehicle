@@ -38,6 +38,10 @@ export default {
       backgroundColor: {},
 
       borderColor: {},
+
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],
