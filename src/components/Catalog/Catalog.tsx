@@ -2,7 +2,6 @@
 // import Modal from "components/UIKit/Modal";
 
 import Filter from "components/Filter";
-import DateRangePicker from "components/UIKit/DateRangePicker";
 import VehicleCard from "components/VehicleCard";
 
 // import { ReactComponent as LocationIcon } from "assets/icons/location.svg";

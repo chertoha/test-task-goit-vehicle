@@ -1,11 +1,13 @@
-import { FC, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import { IconValueType } from "../Icon/Icon";
+import { Field, useField, useFormikContext } from "formik";
 
 interface IInputFieldProps {
   type: "text" | "email";
   IconStart?: IconValueType;
   IconEnd?: IconValueType;
   placeholder: string;
+  name: string;
 }
 
 const InputField: FC<IInputFieldProps> = ({
@@ -13,23 +15,24 @@ const InputField: FC<IInputFieldProps> = ({
   IconStart,
   IconEnd,
   placeholder,
+  ...props
 }) => {
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [field, { error, touched }] = useField(props);
+  const { handleBlur } = useFormikContext();
 
   return (
     <label className="block relative">
-      <input
+      <Field
         type={type}
         placeholder={placeholder}
-        className={`input-field
-        ${IconStart && "pl-[44px]"}
-        ${IconEnd && "pr-[44px]"}
-        `}
-        onFocus={() => {
-          setIsFocused(true);
-        }}
-        onBlur={() => {
-          setIsFocused(false);
+        className={`input-field ${IconStart && "pl-[44px]"} ${
+          IconEnd && "pr-[44px]"
+        } `}
+        {...field}
+        onFocus={() => setIsFocused(true)}
+        onBlur={(e: ChangeEvent<HTMLInputElement>) => {
+          handleBlur(e), setIsFocused(false);
         }}
       />
 
@@ -58,6 +61,12 @@ const InputField: FC<IInputFieldProps> = ({
           />
         </span>
       )}
+
+      {error && touched ? (
+        <span className="absolute  bottom-1 left-3 block text-[10px] leading-[1] text-accent">
+          *{error}
+        </span>
+      ) : null}
     </label>
   );
 };

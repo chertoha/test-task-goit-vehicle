@@ -22,12 +22,18 @@ export default defineConfig({
       //   replacement: resolve(__dirname, "src/assets/"),
       // },
 
-      ...["pages", "config", "components", "assets", "utils", "hooks"].map(
-        source => ({
-          find: source,
-          replacement: resolve(__dirname, `./src/${source}/`),
-        })
-      ),
+      ...[
+        "pages",
+        "config",
+        "services",
+        "components",
+        "assets",
+        "utils",
+        "hooks",
+      ].map(source => ({
+        find: source,
+        replacement: resolve(__dirname, `./src/${source}/`),
+      })),
     ],
   },
 
