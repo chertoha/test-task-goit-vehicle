@@ -1,4 +1,3 @@
-// import Field from "components/UIKit/InputField";
 import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
 import FilterCheckbox from "components/UIKit/FilterCheckbox";
 import FilterRadio from "components/UIKit/FilterRadio";
@@ -19,7 +18,7 @@ export type FilterValues = {
 const initialValues: FilterValues = {
   search: "",
   options: [],
-  form: "alcove",
+  form: "van",
 };
 
 const Filter: FC<IFilterProps> = () => {
