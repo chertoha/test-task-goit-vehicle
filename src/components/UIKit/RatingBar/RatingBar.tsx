@@ -14,6 +14,7 @@ const RatingBar: FC<IRatingBarProps> = ({ value }) => {
     <div className="flex gap-x-1">
       {collection.map((_, i) => (
         <span
+          key={i}
           className={`${i + 1 <= flooredValue ? "text-yellow" : "text-grey"}`}
         >
           <StarIcon
