@@ -1,5 +1,5 @@
-import Field from "components/UIKit/InputField";
-import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+// import Field from "components/UIKit/InputField";
+// import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
 import FilterCheckbox from "components/UIKit/FilterCheckbox";
 import FilterRadio from "components/UIKit/FilterRadio";
 import { FC } from "react";
@@ -14,11 +14,11 @@ const Filter: FC<IFilterProps> = () => {
       <div className="">
         <h2 className="heading-4 text-black/60">Location</h2>
         <div className="mt-2">
-          <Field
+          {/* <Field
             placeholder="City"
             type="text"
             IconStart={LocationIcon}
-          />
+          /> */}
         </div>
       </div>
 

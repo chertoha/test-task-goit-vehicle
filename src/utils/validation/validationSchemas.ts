@@ -15,9 +15,10 @@ export const bookFormSchema = Yup.object().shape({
     .max(320, "Email must have not more than 320 symbols")
     .required("Please, write your email"),
 
-  date: Yup.tuple([Yup.date(), Yup.date()]).required(
-    "Please select date range"
-  ),
+  dates: Yup.tuple([
+    Yup.date().nonNullable("Select start date range. "),
+    Yup.date().nonNullable("Select select end date range"),
+  ]).required("Please select date range"),
 
   comment: Yup.string()
     .min(10, "Comment must have not less than 10 symbols")

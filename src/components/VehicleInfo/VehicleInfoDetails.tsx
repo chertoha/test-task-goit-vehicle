@@ -1,7 +1,7 @@
 import { useState } from "react";
 import VehicleFeatures from "./VehicleFeatures";
 import VehicleReviews from "./VehicleReviews";
-import BookForm from "./BookForm";
+import BookForm from "../BookForm/BookForm";
 
 const VehicleInfoDetails = () => {
   const [isFeatures, setIsFeatures] = useState(true);
