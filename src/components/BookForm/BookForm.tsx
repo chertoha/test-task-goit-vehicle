@@ -25,8 +25,8 @@ const BookForm = () => {
     values: BookFormValues,
     { resetForm }: FormikActions<BookFormValues>
   ) => {
+    await new Promise(r => setTimeout(r, 2000));
     console.log(values);
-
     resetForm({ values: initialValues });
   };
 
