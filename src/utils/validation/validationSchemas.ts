@@ -19,9 +19,4 @@ export const bookFormSchema = Yup.object().shape({
     Yup.date().nonNullable("Select start date range. "),
     Yup.date().nonNullable("Select select end date range"),
   ]).required("Please select date range"),
-
-  comment: Yup.string()
-    .min(10, "Comment must have not less than 10 symbols")
-    .max(300, "Name must have not more than 300 symbols")
-    .required("Please, write your comment"),
 });
