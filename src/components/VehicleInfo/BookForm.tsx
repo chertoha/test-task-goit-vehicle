@@ -1,6 +1,6 @@
 import Field from "components/UIKit/InputField";
-import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
 import AreaField from "components/UIKit/AreaField";
+import DateRangePicker from "components/UIKit/DateRangePicker";
 
 const BookForm = () => {
   return (
@@ -22,11 +22,7 @@ const BookForm = () => {
             placeholder="Email"
           />
 
-          <Field
-            type="text"
-            placeholder="Booking date"
-            IconEnd={CalendarIcon}
-          />
+          <DateRangePicker name="date" />
 
           <AreaField placeholder="Comment" />
         </div>
