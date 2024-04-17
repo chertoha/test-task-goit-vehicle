@@ -3,7 +3,7 @@ import { ReactComponent as StarIcon } from "assets/icons/star.svg";
 
 interface IReviewsLabelProps {
   rate: number;
-  count: number;
+  count?: number;
 }
 
 const ReviewsLabel: FC<IReviewsLabelProps> = ({ count, rate }) => {
@@ -17,7 +17,7 @@ const ReviewsLabel: FC<IReviewsLabelProps> = ({ count, rate }) => {
       </span>
 
       <span className="body-1 underline">
-        {rate}&#40;{count} Reviews&#41;
+        {rate} {count && <>&#40;{count} Reviews&#41;</>}
       </span>
     </div>
   );

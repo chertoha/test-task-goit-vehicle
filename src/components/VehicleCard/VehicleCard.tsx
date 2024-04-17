@@ -4,12 +4,40 @@ import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
 import Chip from "components/UIKit/Chip";
 import ShowMoreButton from "components/UIKit/ShowMoreButton";
+import { Vehicle } from "types/entities";
+import { getOptionList } from "utils/getOptionList";
+import ChipList from "components/ChipList";
 
 interface IVehicleCardProps {
-  //...
+  vehicle: Vehicle;
 }
 
-const VehicleCard: FC<IVehicleCardProps> = () => {
+const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
+  // const commonOptions = { ...vehicle, ...vehicle.details };
+
+  // type CommonOptionsKey = keyof typeof commonOptions;
+
+  // type Option = {
+  //   key: string;
+  //   value: number | string;
+  // };
+
+  // const options: Option[] = [];
+
+  // Object.keys(commonOptions).forEach(key => {
+  //   if (Icon[key as IconKeyType]) {
+  //     options.push({
+  //       key,
+  //       value: commonOptions[key as CommonOptionsKey] as string | number,
+  //     });
+  //   }
+  // });
+
+  const options = getOptionList(vehicle);
+
+  // console.log(commonOptions);
+  console.log(options);
+
   return (
     <div className="p-6 flex gap-x-6 border border-black/20 rounded-[20px]">
       <div className="shrink-0 w-[290px] h-[310px] overflow-hidden rounded-[10px]">
@@ -18,9 +46,9 @@ const VehicleCard: FC<IVehicleCardProps> = () => {
 
       <div className="w-full">
         <div className="flex items-center justify-between ">
-          <h2 className="heading-1">Mavericks</h2>
+          <h2 className="heading-1">{vehicle.name}</h2>
           <p className="heading-1 flex items-center gap-x-[10px]">
-            €{(8000).toFixed(2)}{" "}
+            €{vehicle.price.toFixed(2)}
             <button
               type="button"
               className="flex-center"
@@ -36,71 +64,31 @@ const VehicleCard: FC<IVehicleCardProps> = () => {
         <div className="mt-2 flex items-center">
           <div className="mr-4">
             <ReviewsLabel
-              rate={4.4}
-              count={2}
+              rate={vehicle.rating}
+              count={vehicle.reviews.length}
             />
           </div>
 
-          <LocationLabel location="Kyiv, Ukraine" />
+          <LocationLabel location={vehicle.location} />
         </div>
 
         <p className="trim-text-one-row mt-6 w-[525px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel facere
-          nemo architecto quisquam culpa voluptatibus suscipit quis, dolore ea
-          laboriosam distinctio hic! Quae, voluptas doloremque excepturi odio
-          quos quas dolor.
+          {vehicle.description}
         </p>
 
         <div className="mt-6">
-          <ul className="flex flex-wrap gap-2 ">
-            <li>
-              <Chip
-                iconKey="adults"
-                title="adults"
-                value={2}
-              />
-            </li>
-
-            <li>
-              <Chip
-                iconKey="transmission"
-                title="Automatic"
-                value={1}
-              />
-            </li>
-
-            <li>
-              <Chip
-                iconKey="petrol"
-                title="petrol"
-                value={1}
-              />
-            </li>
-
-            <li>
-              <Chip
-                iconKey="kitchen"
-                title="kitchen"
-                value={1}
-              />
-            </li>
-
-            <li>
-              <Chip
-                iconKey="beds"
-                title="beds"
-                value={1}
-              />
-            </li>
-
-            <li>
-              <Chip
-                iconKey="airConditioner"
-                title="AC"
-                value={1}
-              />
-            </li>
-          </ul>
+          <ChipList options={options} />
+          {/* <ul className="flex flex-wrap gap-2 ">
+            {options.map(({ key, value }) => (
+              <li key={key}>
+                <Chip
+                  iconKey={key}
+                  title={key}
+                  value={value}
+                />
+              </li>
+            ))}
+          </ul> */}
         </div>
 
         <div className="mt-6 w-[166px]">
