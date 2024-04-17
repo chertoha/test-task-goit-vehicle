@@ -2,7 +2,6 @@ import { FC } from "react";
 import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
-import Chip from "components/UIKit/Chip";
 import ShowMoreButton from "components/UIKit/ShowMoreButton";
 import { Vehicle } from "types/entities";
 import { getOptionList } from "utils/getOptionList";
@@ -13,35 +12,15 @@ interface IVehicleCardProps {
 }
 
 const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
-  // const commonOptions = { ...vehicle, ...vehicle.details };
-
-  // type CommonOptionsKey = keyof typeof commonOptions;
-
-  // type Option = {
-  //   key: string;
-  //   value: number | string;
-  // };
-
-  // const options: Option[] = [];
-
-  // Object.keys(commonOptions).forEach(key => {
-  //   if (Icon[key as IconKeyType]) {
-  //     options.push({
-  //       key,
-  //       value: commonOptions[key as CommonOptionsKey] as string | number,
-  //     });
-  //   }
-  // });
-
   const options = getOptionList(vehicle);
-
-  // console.log(commonOptions);
-  console.log(options);
 
   return (
     <div className="p-6 flex gap-x-6 border border-black/20 rounded-[20px]">
       <div className="shrink-0 w-[290px] h-[310px] overflow-hidden rounded-[10px]">
-        <img className="w-full h-full bg-cover" />
+        <img
+          src={vehicle.gallery[0]}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="w-full">
@@ -78,17 +57,6 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
 
         <div className="mt-6">
           <ChipList options={options} />
-          {/* <ul className="flex flex-wrap gap-2 ">
-            {options.map(({ key, value }) => (
-              <li key={key}>
-                <Chip
-                  iconKey={key}
-                  title={key}
-                  value={value}
-                />
-              </li>
-            ))}
-          </ul> */}
         </div>
 
         <div className="mt-6 w-[166px]">
