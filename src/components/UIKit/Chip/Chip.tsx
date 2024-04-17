@@ -4,8 +4,10 @@ import { Icon, IconKeyType } from "../Icon/Icon";
 interface IChipProps {
   iconKey: string;
   title: string;
-  value: number;
+  value: number | string;
 }
+
+const optionsFilter = ["gas", "water"];
 
 const Chip: FC<IChipProps> = ({ iconKey, title, value }) => {
   const ChipIcon = Icon[iconKey as IconKeyType];
@@ -19,9 +21,17 @@ const Chip: FC<IChipProps> = ({ iconKey, title, value }) => {
         />
       )}
 
-      <span className="label">
-        {value !== 1 && value} <span className="capitalize">{title}</span>
-      </span>
+      {typeof value === "number" ? (
+        <span className="label">
+          {value !== 1 && value} <span className="capitalize">{title}</span>
+        </span>
+      ) : (
+        <span className="label">
+          <span className="capitalize">
+            {optionsFilter.includes(iconKey) ? title : value}
+          </span>
+        </span>
+      )}
     </div>
   );
 };
