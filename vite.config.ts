@@ -30,7 +30,6 @@ export default defineConfig({
         "assets",
         "utils",
         "hooks",
-        "redux",
       ].map(source => ({
         find: source,
         replacement: resolve(__dirname, `./src/${source}/`),
