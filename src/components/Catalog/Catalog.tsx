@@ -1,6 +1,3 @@
-// import Chip from "components/UIKit/Chip";
-// import Modal from "components/UIKit/Modal";
-
 import Filter from "components/Filter";
 import { useGetAdvertsQuery } from "../../redux/adverts/advertsApi";
 import CatalogCardList from "components/CatalogCardList";
@@ -22,13 +19,13 @@ const Catalog = () => {
     <>
       <div className="container-default outline outline-fuchsia-400">
         <div className="flex items-start gap-x-16 ">
-          <aside className="shrink-0  w-[360px]">
-            <Filter />
+          <aside className="shrink-0  w-[360px] self-stretch">
+            <div className="sticky top-10">
+              <Filter />
+            </div>
           </aside>
 
           <div className="w-full ">
-            {/* <VehicleCard /> */}
-
             <CatalogCardList list={vehiclesList} />
 
             <div className="mt-[50px] mx-auto flex justify-center">
