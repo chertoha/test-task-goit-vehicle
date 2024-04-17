@@ -8,7 +8,7 @@ export const initialBookFormValues: BookFormValues = {
 };
 
 export const initialFilterValues: FilterValues = {
-  search: "",
+  location: "",
   options: [],
   //   form: "panelTruck",
   form: "",

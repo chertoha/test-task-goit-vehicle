@@ -5,16 +5,11 @@ import { DEFAULT_QUERY_LIMIT, DEFAULT_QUERY_PAGE } from "services/config";
 
 type AdvertsQuery = {
   page: number;
-  search: string;
+  location: string;
   form: string;
   options: unknown;
 };
-
-type AdvertsCountQuery = {
-  search: string;
-  form: string;
-  options: unknown;
-};
+type AdvertsCountQuery = Omit<AdvertsQuery, "page">;
 
 export const advertsApi = createApi({
   reducerPath: "adverts",
@@ -23,23 +18,26 @@ export const advertsApi = createApi({
 
   endpoints: builder => ({
     getAdverts: builder.query<Vehicle[], AdvertsQuery>({
-      query: ({ page = DEFAULT_QUERY_PAGE, options, ...rest }) => ({
+      query: ({ page = DEFAULT_QUERY_PAGE, location, form }) => ({
         url: "/advert",
         method: "GET",
         params: {
           page,
           limit: DEFAULT_QUERY_LIMIT,
-          ...rest,
+
+          ...(location && { location }),
+          ...(form && { form }),
         },
       }),
     }),
 
     getAdvertsCount: builder.query<number, AdvertsCountQuery>({
-      query: ({ options, ...rest }) => ({
+      query: ({ form, location }) => ({
         url: "/advert",
         method: "GET",
         params: {
-          ...rest,
+          ...(location && { location }),
+          ...(form && { form }),
         },
       }),
       transformResponse: (response: Vehicle[]) => response.length,

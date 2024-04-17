@@ -9,9 +9,10 @@ import { initialFilterValues } from "utils/initialFormValues";
 
 interface IFilterProps {
   onSubmit: (values: FilterValues) => void;
+  initialValues: FilterValues;
 }
 
-const Filter: FC<IFilterProps> = ({ onSubmit }) => {
+const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
   const onSubmitHandler = (values: FilterValues) => {
     onSubmit(values);
   };
@@ -19,7 +20,8 @@ const Filter: FC<IFilterProps> = ({ onSubmit }) => {
   return (
     <Formik
       onSubmit={onSubmitHandler}
-      initialValues={initialFilterValues}
+      initialValues={initialValues}
+      // initialValues={initialFilterValues}
     >
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
@@ -27,7 +29,7 @@ const Filter: FC<IFilterProps> = ({ onSubmit }) => {
             <h2 className="heading-4 text-black/60">Location</h2>
             <div className="mt-2">
               <InputField
-                name="search"
+                name="location"
                 placeholder="City"
                 type="text"
                 IconStart={LocationIcon}

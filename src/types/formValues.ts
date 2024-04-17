@@ -1,5 +1,5 @@
 export type FilterValues = {
-  search: string;
+  location: string;
   options: string[];
   form: string;
 };
