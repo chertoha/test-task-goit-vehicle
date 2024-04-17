@@ -5,7 +5,6 @@ import InputField from "components/UIKit/InputField";
 import { Formik } from "formik";
 import { FC } from "react";
 import { FilterValues } from "types/formValues";
-import { initialFilterValues } from "utils/initialFormValues";
 
 interface IFilterProps {
   onSubmit: (values: FilterValues) => void;
@@ -21,7 +20,6 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
     <Formik
       onSubmit={onSubmitHandler}
       initialValues={initialValues}
-      // initialValues={initialFilterValues}
     >
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
