@@ -13,26 +13,28 @@ const Chip: FC<IChipProps> = ({ iconKey, title, value }) => {
   const ChipIcon = Icon[iconKey as IconKeyType];
 
   return (
-    <div className="inline-flex text-black gap-x-2 items-center px-[18px] py-3 bg-grey rounded-full">
-      {ChipIcon && (
-        <ChipIcon
-          width={20}
-          height={20}
-        />
-      )}
+    value !== 0 && (
+      <div className="inline-flex text-black gap-x-2 items-center px-[18px] py-3 bg-grey rounded-full">
+        {ChipIcon && (
+          <ChipIcon
+            width={20}
+            height={20}
+          />
+        )}
 
-      {typeof value === "number" ? (
-        <span className="label">
-          {value !== 1 && value} <span className="capitalize">{title}</span>
-        </span>
-      ) : (
-        <span className="label">
-          <span className="capitalize">
-            {optionsFilter.includes(iconKey) ? title : value}
+        {typeof value === "number" ? (
+          <span className="label">
+            {value !== 1 && value} <span className="capitalize">{title}</span>
           </span>
-        </span>
-      )}
-    </div>
+        ) : (
+          <span className="label">
+            <span className="capitalize">
+              {optionsFilter.includes(iconKey) ? title : value}
+            </span>
+          </span>
+        )}
+      </div>
+    )
   );
 };
 
