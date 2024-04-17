@@ -3,20 +3,15 @@ import { bookFormSchema } from "utils/validation/validationSchemas";
 import { FormikHelpers as FormikActions } from "formik";
 import { SessionStorage } from "services/storage";
 import BookFormFields from "./BookFormFields";
+import { BookFormValues } from "types/formValues";
+import { initialBookFormValues } from "utils/initialFormValues";
 
-export type BookFormValues = {
-  name: string;
-  email: string;
-  dates: [Date | null, Date | null];
-  comment: string;
-};
-
-const initialValues: BookFormValues = {
-  name: "",
-  email: "",
-  dates: [null, null],
-  comment: "",
-};
+// const initialBookFormValues: BookFormValues = {
+//   name: "",
+//   email: "",
+//   dates: [null, null],
+//   comment: "",
+// };
 
 const session = new SessionStorage<BookFormValues>("book_form_fields");
 
@@ -27,7 +22,7 @@ const BookForm = () => {
   ) => {
     await new Promise(r => setTimeout(r, 2000));
     console.log(values);
-    resetForm({ values: initialValues });
+    resetForm({ values: initialBookFormValues });
   };
 
   return (
@@ -38,7 +33,7 @@ const BookForm = () => {
       </p>
 
       <Formik
-        initialValues={session.get() || initialValues}
+        initialValues={session.get() || initialBookFormValues}
         onSubmit={onSubmitHandler}
         validationSchema={bookFormSchema}
       >
