@@ -44,7 +44,7 @@ export const Icon = {
 
   alcove: AlcoveIcon,
   fullyIntegrated: IntagratedIcon,
-  van: VanIcon,
+  panelTruck: VanIcon,
 };
 
 export type IconKeyType = keyof typeof Icon;
