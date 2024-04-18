@@ -5,26 +5,6 @@ const Header = () => {
   return (
     <header className="pt-8">
       <div className="container-default">
-        {/* <div className="flex">
-          <NavLink
-            className="nav"
-            to={ROUTES.HOME}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            className="nav"
-            to={ROUTES.CATALOG}
-          >
-            Catalog
-          </NavLink>
-          <NavLink
-            className="nav"
-            to={ROUTES.FAVORITES}
-          >
-            Favorites
-          </NavLink>
-        </div> */}
         <nav>
           <ul className="flex gap-x-10 border-b border-black/20  max-md:gap-x-3">
             <li>
