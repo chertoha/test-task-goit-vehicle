@@ -1,5 +1,5 @@
 .container-default {
-  @apply container mx-auto px-4 md:px-40 xl:px-16;
+  @apply container mx-auto px-4 md:px-6 xl:px-16;
 }
 
 .nav.active {
