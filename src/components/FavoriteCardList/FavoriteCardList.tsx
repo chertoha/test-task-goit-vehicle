@@ -10,10 +10,7 @@ const FavoriteCardList: FC<IFavoriteCardListProps> = ({ list }) => {
   return (
     <ul className="grid xl:grid-cols-2 grid-cols-1 gap-10">
       {list.map(vehicle => (
-        <li
-          key={vehicle.id}
-          className=""
-        >
+        <li key={vehicle.id}>
           <VehicleCardFavorite vehicle={vehicle} />
         </li>
       ))}

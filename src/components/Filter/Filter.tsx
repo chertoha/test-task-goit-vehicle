@@ -41,7 +41,7 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
               <h3 className="heading-2">Vehicle equipment</h3>
 
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-3 gap-x-[10px] gap-y-2">
+                <ul className="grid grid-cols-2 md:grid-cols-3  gap-x-[10px] gap-y-2">
                   <li>
                     <FilterCheckbox
                       iconKey="airConditioner"
@@ -89,7 +89,7 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
               <h3 className="heading-2">Vehicle type</h3>
 
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-3 gap-x-[10px] gap-y-2">
+                <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-[10px] gap-y-2">
                   <li>
                     <FilterRadio
                       iconKey="panelTruck"

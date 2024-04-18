@@ -16,15 +16,15 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
   const options = getOptionList(vehicle);
 
   return (
-    <div className="p-6 flex gap-x-6 border border-black/20 rounded-[20px]">
-      <div className="shrink-0 w-[290px] h-[310px] overflow-hidden rounded-[10px]">
+    <div className="p-6 flex max-xl:flex-col gap-x-6 border border-black/20 rounded-[20px]">
+      <div className="shrink-0 xl:w-[290px] h-[310px] overflow-hidden rounded-[10px]">
         <img
           src={vehicle.gallery[0]}
           className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="w-full">
+      <div className="w-full max-xl:mt-4">
         <div className="flex items-center justify-between ">
           <h2 className="heading-1">{vehicle.name}</h2>
           <p className="heading-1 flex items-center gap-x-[10px]">
@@ -44,7 +44,7 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
           <LocationLabel location={vehicle.location} />
         </div>
 
-        <p className="trim-text-one-row mt-6 w-[525px]">
+        <p className="trim-text-one-row mt-6 xl:w-[525px]">
           {vehicle.description}
         </p>
 
