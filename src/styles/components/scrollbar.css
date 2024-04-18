@@ -1,0 +1,7 @@
+.scroll-bar::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  @apply bg-[#D9D9D9] rounded-full;
+}

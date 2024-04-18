@@ -60,7 +60,10 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
         </div>
 
         <div className="mt-6 w-[166px]">
-          <ShowMoreButton title="Show more" />
+          <ShowMoreButton
+            title="Show more"
+            vehicle={vehicle}
+          />
         </div>
       </div>
     </div>

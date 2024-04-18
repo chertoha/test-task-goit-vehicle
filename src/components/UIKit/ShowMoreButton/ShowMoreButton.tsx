@@ -2,12 +2,14 @@ import { useModal } from "hooks/useModal";
 import { FC } from "react";
 import Modal from "../Modal";
 import VehicleInfo from "components/VehicleInfo";
+import { Vehicle } from "types/entities";
 
 interface IShowMoreButtonProps {
   title: string;
+  vehicle: Vehicle;
 }
 
-const ShowMoreButton: FC<IShowMoreButtonProps> = ({ title }) => {
+const ShowMoreButton: FC<IShowMoreButtonProps> = ({ title, vehicle }) => {
   const { open, isOpen, close } = useModal();
 
   return (
@@ -24,7 +26,7 @@ const ShowMoreButton: FC<IShowMoreButtonProps> = ({ title }) => {
         close={close}
         isOpen={isOpen}
       >
-        <VehicleInfo />
+        <VehicleInfo data={vehicle} />
       </Modal>
     </>
   );

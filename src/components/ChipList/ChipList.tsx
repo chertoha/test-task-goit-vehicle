@@ -9,15 +9,17 @@ interface IChipListProps {
 const ChipList: FC<IChipListProps> = ({ options }) => {
   return (
     <ul className="flex flex-wrap gap-2">
-      {options.map(({ key, value }) => (
-        <li key={key}>
-          <Chip
-            iconKey={key}
-            title={key}
-            value={value}
-          />
-        </li>
-      ))}
+      {options.map(({ key, value }) =>
+        value ? (
+          <li key={key}>
+            <Chip
+              iconKey={key}
+              title={key}
+              value={value}
+            />
+          </li>
+        ) : null
+      )}
     </ul>
   );
 };

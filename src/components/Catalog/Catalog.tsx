@@ -89,8 +89,8 @@ const Catalog = () => {
   // if (isError) return <div>Error component</div>;
   if (!vehicles) return null;
 
-  console.log(vehicles);
-  console.log(filterQuery);
+  // console.log(vehicles);
+  // console.log(filterQuery);
 
   const isLoadMoreShown =
     !isError &&
