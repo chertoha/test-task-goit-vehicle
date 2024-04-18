@@ -1,10 +1,12 @@
+import VisitCard from "components/VisitCard";
+
 const Home = () => {
   return (
-    <>
+    <div className="bg-[#292e34] h-screen ">
       <div className="container-default">
-        <div className="main-text  text-accent">Home</div>
+        <VisitCard />
       </div>
-    </>
+    </div>
   );
 };
 
