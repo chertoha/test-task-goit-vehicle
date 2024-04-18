@@ -2,10 +2,6 @@
   @apply container mx-auto px-4 md:px-6 xl:px-16;
 }
 
-.nav.active {
-  @apply text-accent;
-}
-
 .flex-center {
   @apply flex items-center justify-center;
 }
