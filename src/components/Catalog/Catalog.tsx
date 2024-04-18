@@ -57,6 +57,7 @@ const Catalog = () => {
   return (
     <>
       <div className="container-default ">
+        <h1 hidden>Rent the best van</h1>
         <div className="flex items-start gap-x-16 ">
           <aside className="shrink-0  w-[360px] self-stretch">
             <div className="sticky top-10">
