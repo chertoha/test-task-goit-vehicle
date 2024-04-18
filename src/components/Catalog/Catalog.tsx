@@ -2,7 +2,6 @@ import Filter from "components/Filter";
 import {
   useGetAdvertsCountQuery,
   useGetAdvertsQuery,
-  useLazyGetAdvertsQuery,
 } from "../../redux/adverts/advertsApi";
 import CatalogCardList from "components/CatalogCardList";
 import { useEffect, useState } from "react";
@@ -14,14 +13,12 @@ import { checkListDuplicates } from "utils/checkListDuplicates";
 import Spinner from "components/UIKit/Spinner";
 
 const Catalog = () => {
-  // const zeroRequest = useRef(true);
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [page, setPage] = useState<number>(DEFAULT_QUERY_PAGE);
 
   const [filterQuery, setFilterQuery] =
     useState<FilterValues>(initialFilterValues);
 
-  // const [getAdverts, { isError, isFetching }] = useLazyGetAdvertsQuery();
   const { data, isError, isFetching } = useGetAdvertsQuery({
     page,
     ...filterQuery,
@@ -30,28 +27,6 @@ const Catalog = () => {
   const { data: countVehicles } = useGetAdvertsCountQuery({ ...filterQuery });
 
   const increasePage = () => setPage(p => p + 1);
-
-  // useEffect(() => {
-  //   if (zeroRequest.current) {
-  //     zeroRequest.current = false;
-  //     return;
-  //   }
-
-  //   getAdverts({ page, ...filterQuery }).then(response => {
-  //     if (!response.data) return;
-
-  //     setVehicles(prevState => {
-  //       return [...prevState, ...(response.data as Vehicle[])];
-  //     });
-
-  //     // setFilterQuery(initialFilterValues);
-  //   });
-  // }, [getAdverts, page, filterQuery]);
-
-  // useEffect(() => {
-  //   if (!data) return;
-  //   setVehicles(prevState => [...prevState, ...data]);
-  // }, []);
 
   useEffect(() => {
     setVehicles([]);
@@ -66,31 +41,13 @@ const Catalog = () => {
         ? prevState
         : [...prevState, ...data]
     );
-
-    // if (checkListDuplicates()) return
-    // setVehicles(prevState => {
-    //   console.log(checkListDuplicates(prevState, data, "id"));
-
-    //   if (checkListDuplicates(prevState, data, "id")) return prevState;
-
-    //   return [...prevState, ...data];
-    // });
   }, [data]);
 
   const filterQuerySubmitHandler = (filterValues: FilterValues) => {
-    console.log(filterValues);
-
-    // setVehicles([]);
-    // setPage(DEFAULT_QUERY_PAGE);
     setFilterQuery(filterValues);
   };
 
-  // if (isFetching) return <div>Loading....</div>;
-  // if (isError) return <div>Error component</div>;
   if (!vehicles) return null;
-
-  // console.log(vehicles);
-  // console.log(filterQuery);
 
   const isLoadMoreShown =
     !isError &&
