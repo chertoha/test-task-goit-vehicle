@@ -1,9 +1,10 @@
 import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+import { TogglerContext } from "components/Toggler/Toggler";
 import FilterCheckbox from "components/UIKit/FilterCheckbox";
 import FilterRadio from "components/UIKit/FilterRadio";
 import InputField from "components/UIKit/InputField";
 import { Formik } from "formik";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { FilterValues } from "types/formValues";
 
 interface IFilterProps {
@@ -12,8 +13,11 @@ interface IFilterProps {
 }
 
 const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
+  const closeToggler = useContext(TogglerContext);
+
   const onSubmitHandler = (values: FilterValues) => {
     onSubmit(values);
+    closeToggler();
   };
 
   return (
@@ -41,7 +45,7 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
               <h3 className="heading-2">Vehicle equipment</h3>
 
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-3 gap-x-[10px] gap-y-2">
+                <ul className="grid grid-cols-2 md:grid-cols-3  gap-x-[10px] gap-y-2">
                   <li>
                     <FilterCheckbox
                       iconKey="airConditioner"
@@ -89,7 +93,7 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
               <h3 className="heading-2">Vehicle type</h3>
 
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-3 gap-x-[10px] gap-y-2">
+                <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-[10px] gap-y-2">
                   <li>
                     <FilterRadio
                       iconKey="panelTruck"

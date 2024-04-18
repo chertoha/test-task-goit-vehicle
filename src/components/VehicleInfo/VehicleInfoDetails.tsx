@@ -1,8 +1,7 @@
-import { FC, useState } from "react";
 import VehicleFeatures from "./VehicleFeatures";
 import VehicleReviews from "./VehicleReviews";
 import BookForm from "../BookForm/BookForm";
-// import { Vehicle } from "types/entities";
+import { FC, useState } from "react";
 
 interface IVehicleInfoDetailsProps {
   // data: Vehicle;
@@ -37,15 +36,9 @@ const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = () => {
         </li>
       </ul>
 
-      <div className="flex gap-x-6 mt-[44px]">
+      <div className="flex gap-x-6 mt-[44px] max-xl:flex-col max-xl:gap-y-6">
         <div className="w-full">
-          {isFeatures ? (
-            // <VehicleFeatures data={data} />
-            <VehicleFeatures />
-          ) : (
-            // <VehicleReviews reviews={data.reviews} />
-            <VehicleReviews />
-          )}
+          {isFeatures ? <VehicleFeatures /> : <VehicleReviews />}
         </div>
         <div className="w-full ">
           <BookForm />

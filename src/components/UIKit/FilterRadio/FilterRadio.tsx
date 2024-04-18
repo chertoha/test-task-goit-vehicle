@@ -15,7 +15,7 @@ const FilterRadio: FC<IFilterRadioProps> = ({ iconKey, title, ...props }) => {
 
   return (
     <label
-      className={`label transition-default cursor-pointer flex flex-col w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
+      className={`label transition-default cursor-pointer flex flex-col md:w-[112px] h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
         value === iconKey ? "border-accent" : "border-black/20"
       } `}
     >

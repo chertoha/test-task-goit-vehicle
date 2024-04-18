@@ -11,6 +11,7 @@ import { initialFilterValues } from "utils/initialFormValues";
 import { FilterValues } from "types/formValues";
 import { checkListDuplicates } from "utils/checkListDuplicates";
 import Spinner from "components/UIKit/Spinner";
+import Toggler from "components/Toggler";
 
 const Catalog = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
@@ -58,17 +59,19 @@ const Catalog = () => {
     <>
       <div className="container-default ">
         <h1 hidden>Rent the best van</h1>
-        <div className="flex items-start gap-x-16 ">
-          <aside className="shrink-0  w-[360px] self-stretch">
+        <div className="xl:flex items-start gap-x-16  ">
+          <aside className="shrink-0  md:w-[360px] self-stretch">
             <div className="sticky top-10">
-              <Filter
-                onSubmit={filterQuerySubmitHandler}
-                initialValues={filterQuery}
-              />
+              <Toggler title="Filter">
+                <Filter
+                  onSubmit={filterQuerySubmitHandler}
+                  initialValues={filterQuery}
+                />
+              </Toggler>
             </div>
           </aside>
 
-          <div className="w-full ">
+          <div className="w-full max-xl:mt-6">
             {!isError ? (
               isFetching ? (
                 <div className="flex justify-center pt-20">
