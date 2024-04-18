@@ -1,5 +1,5 @@
 .scroll-bar::-webkit-scrollbar {
-  @apply w-2 bg-transparent;
+  @apply w-1 md:w-2 bg-transparent;
 }
 
 .scroll-bar::-webkit-scrollbar-thumb {

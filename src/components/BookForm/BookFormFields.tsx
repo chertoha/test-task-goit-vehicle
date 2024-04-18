@@ -46,12 +46,14 @@ const BookFormFields: FC<IBookFormFieldsProps> = ({ session }) => {
           />
         </div>
 
-        <button
-          type="submit"
-          className="button-primary mt-10 px-[60px]"
-        >
-          Send
-        </button>
+        <div className="max-md:flex max-md:justify-center">
+          <button
+            type="submit"
+            className="button-primary mt-10 px-[60px]"
+          >
+            Send
+          </button>
+        </div>
       </form>
 
       {isSubmitting && (
