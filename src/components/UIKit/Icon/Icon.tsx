@@ -16,6 +16,7 @@ import { ReactComponent as TransmissionIcon } from "assets/icons/equipment/trans
 import { ReactComponent as TVIcon } from "assets/icons/equipment/tv.svg";
 import { ReactComponent as WaterIcon } from "assets/icons/equipment/water.svg";
 import { ReactComponent as ChildrenIcon } from "assets/icons/equipment/children.svg";
+import { ReactComponent as BathroomIcon } from "assets/icons/equipment/bathroom.svg";
 import { ReactComponent as AlcoveIcon } from "assets/icons/type/alcove.svg";
 import { ReactComponent as IntagratedIcon } from "assets/icons/type/intagrated.svg";
 import { ReactComponent as VanIcon } from "assets/icons/type/van.svg";
@@ -26,23 +27,24 @@ export const Icon = {
   airConditioner: ACIcon,
   air: AirIcon,
   beds: BedsIcon,
-  cd: CDIcon,
+  CD: CDIcon,
   freezer: FreezerIcon,
   gas: GasIcon,
   hob: HobIcon,
   kitchen: KitchenIcon,
   microwave: MicrowaveIcon,
-  petrol: PetrolIcon,
+  engine: PetrolIcon,
   radio: RadioIcon,
   shower: ShowerIcon,
   toilet: ToiletIcon,
   transmission: TransmissionIcon,
-  tv: TVIcon,
+  TV: TVIcon,
   water: WaterIcon,
+  bathroom: BathroomIcon,
 
   alcove: AlcoveIcon,
   fullyIntegrated: IntagratedIcon,
-  van: VanIcon,
+  panelTruck: VanIcon,
 };
 
 export type IconKeyType = keyof typeof Icon;

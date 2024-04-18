@@ -4,26 +4,16 @@ import FilterRadio from "components/UIKit/FilterRadio";
 import InputField from "components/UIKit/InputField";
 import { Formik } from "formik";
 import { FC } from "react";
+import { FilterValues } from "types/formValues";
 
 interface IFilterProps {
-  //...
+  onSubmit: (values: FilterValues) => void;
+  initialValues: FilterValues;
 }
 
-export type FilterValues = {
-  search: string;
-  options: string[];
-  form: string;
-};
-
-const initialValues: FilterValues = {
-  search: "",
-  options: [],
-  form: "van",
-};
-
-const Filter: FC<IFilterProps> = () => {
+const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
   const onSubmitHandler = (values: FilterValues) => {
-    console.log(values);
+    onSubmit(values);
   };
 
   return (
@@ -37,7 +27,7 @@ const Filter: FC<IFilterProps> = () => {
             <h2 className="heading-4 text-black/60">Location</h2>
             <div className="mt-2">
               <InputField
-                name="search"
+                name="location"
                 placeholder="City"
                 type="text"
                 IconStart={LocationIcon}
@@ -102,9 +92,9 @@ const Filter: FC<IFilterProps> = () => {
                 <ul className="grid grid-cols-3 gap-x-[10px] gap-y-2">
                   <li>
                     <FilterRadio
-                      iconKey="van"
+                      iconKey="panelTruck"
                       name="form"
-                      title="van"
+                      title="panel truck"
                     />
                   </li>
 

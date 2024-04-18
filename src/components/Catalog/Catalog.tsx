@@ -1,98 +1,140 @@
-// import Chip from "components/UIKit/Chip";
-// import Modal from "components/UIKit/Modal";
-
 import Filter from "components/Filter";
-import VehicleCard from "components/VehicleCard";
-
-// import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
-// import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
-
-// import Field from "components/UIKit/Field";
-
-// import RatingBar from "components/UIKit/RatingBar";
-
-// import FilterRadio from "components/UIKit/FilterRadio";
-// import VehicleCard from "components/VehicleCard";
-
-// import FilterCheckbox from "components/UIKit/FilterCheckbox";
-
-// import LocationLabel from "components/UIKit/LocationLabel";
-
-// import ReviewsLabel from "components/UIKit/ReviewsLabel/ReviewsLabel";
+import {
+  useGetAdvertsCountQuery,
+  useGetAdvertsQuery,
+  useLazyGetAdvertsQuery,
+} from "../../redux/adverts/advertsApi";
+import CatalogCardList from "components/CatalogCardList";
+import { useEffect, useState } from "react";
+import { DEFAULT_QUERY_LIMIT, DEFAULT_QUERY_PAGE } from "services/config";
+import { Vehicle } from "types/entities";
+import { initialFilterValues } from "utils/initialFormValues";
+import { FilterValues } from "types/formValues";
+import { checkListDuplicates } from "utils/checkListDuplicates";
+import Spinner from "components/UIKit/Spinner";
 
 const Catalog = () => {
+  // const zeroRequest = useRef(true);
+  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [page, setPage] = useState<number>(DEFAULT_QUERY_PAGE);
+
+  const [filterQuery, setFilterQuery] =
+    useState<FilterValues>(initialFilterValues);
+
+  // const [getAdverts, { isError, isFetching }] = useLazyGetAdvertsQuery();
+  const { data, isError, isFetching } = useGetAdvertsQuery({
+    page,
+    ...filterQuery,
+  });
+
+  const { data: countVehicles } = useGetAdvertsCountQuery({ ...filterQuery });
+
+  const increasePage = () => setPage(p => p + 1);
+
+  // useEffect(() => {
+  //   if (zeroRequest.current) {
+  //     zeroRequest.current = false;
+  //     return;
+  //   }
+
+  //   getAdverts({ page, ...filterQuery }).then(response => {
+  //     if (!response.data) return;
+
+  //     setVehicles(prevState => {
+  //       return [...prevState, ...(response.data as Vehicle[])];
+  //     });
+
+  //     // setFilterQuery(initialFilterValues);
+  //   });
+  // }, [getAdverts, page, filterQuery]);
+
+  // useEffect(() => {
+  //   if (!data) return;
+  //   setVehicles(prevState => [...prevState, ...data]);
+  // }, []);
+
+  useEffect(() => {
+    setVehicles([]);
+    setPage(DEFAULT_QUERY_PAGE);
+  }, [filterQuery]);
+
+  useEffect(() => {
+    if (!data) return;
+
+    setVehicles(prevState =>
+      checkListDuplicates(prevState, data, "id")
+        ? prevState
+        : [...prevState, ...data]
+    );
+
+    // if (checkListDuplicates()) return
+    // setVehicles(prevState => {
+    //   console.log(checkListDuplicates(prevState, data, "id"));
+
+    //   if (checkListDuplicates(prevState, data, "id")) return prevState;
+
+    //   return [...prevState, ...data];
+    // });
+  }, [data]);
+
+  const filterQuerySubmitHandler = (filterValues: FilterValues) => {
+    console.log(filterValues);
+
+    // setVehicles([]);
+    // setPage(DEFAULT_QUERY_PAGE);
+    setFilterQuery(filterValues);
+  };
+
+  // if (isFetching) return <div>Loading....</div>;
+  // if (isError) return <div>Error component</div>;
+  if (!vehicles) return null;
+
+  // console.log(vehicles);
+  // console.log(filterQuery);
+
+  const isLoadMoreShown =
+    !isError &&
+    countVehicles &&
+    countVehicles > DEFAULT_QUERY_LIMIT &&
+    page * DEFAULT_QUERY_LIMIT < countVehicles;
   return (
     <>
-      <div className="container-default outline outline-fuchsia-400">
+      <div className="container-default ">
         <div className="flex items-start gap-x-16 ">
-          <aside className="shrink-0  w-[360px]">
-            <Filter />
+          <aside className="shrink-0  w-[360px] self-stretch">
+            <div className="sticky top-10">
+              <Filter
+                onSubmit={filterQuerySubmitHandler}
+                initialValues={filterQuery}
+              />
+            </div>
           </aside>
 
           <div className="w-full ">
-            <VehicleCard />
+            {!isError ? (
+              isFetching ? (
+                <div className="flex justify-center pt-20">
+                  <Spinner size={100} />
+                </div>
+              ) : (
+                <CatalogCardList list={vehicles} />
+              )
+            ) : (
+              <div className="heading-1 text-center py-20">
+                Sorry, nothing found!
+              </div>
+            )}
 
-            {/* <Chip
-              iconKey="adults"
-              title="adults"
-              value={2}
-            /> */}
-
-            {/* <button className="button-primary w-[170px]">Search</button>
-            <br />
-            <button className="button-secondary w-[145px]">Load more</button> */}
-
-            {/* <ReviewsLabel
-              rate={4.4}
-              count={2}
-            /> */}
-
-            {/* <LocationLabel location="Kyiv, Ukraine" /> */}
-
-            {/* <FilterCheckbox
-              iconKey="airConditioner"
-              title="Fully Integrated"
-              name="equipment"
-            /> */}
-
-            {/* <FilterRadio
-              iconKey="van"
-              name="type"
-              title="Van"
-            />
-            <FilterRadio
-              iconKey="intagrated"
-              name="type"
-              title="Fully Integrated"
-            />
-            <FilterRadio
-              iconKey="alcove"
-              name="type"
-              title="Alcove"
-            /> */}
-
-            {/* <VehicleCard /> */}
-
-            {/* <RatingBar value={3} /> */}
-            {/* 
-            <div className="w-[200px]">
-              <Field
-                placeholder="Name"
-                type="text"
-                IconStart={LocationIcon}
-                IconEnd={CalendarIcon}
-              />
-            </div> */}
-
-            {/* <DateRangePicker name="date" /> */}
-
-            <div className="mt-[50px] mx-auto flex justify-center">
-              <button
-                type="button"
-                className="button-secondary px-8 "
-              >
-                Load more
-              </button>
+            <div className="mt-[50px] mx-auto flex justify-center mb-20">
+              {isLoadMoreShown && (
+                <button
+                  type="button"
+                  className="button-secondary px-8 "
+                  onClick={increasePage}
+                >
+                  Load more
+                </button>
+              )}
             </div>
           </div>
         </div>
