@@ -1,10 +1,11 @@
 import ChipList from "components/ChipList";
+import { useVehicleDataContext } from "hooks/useVehicleDataContext";
 import { FC } from "react";
-import { Vehicle } from "types/entities";
+// import { Vehicle } from "types/entities";
 import { getOptionList } from "utils/getOptionList";
 
 interface IVehicleFeaturesProps {
-  data: Vehicle;
+  // data: Vehicle;
 }
 
 type Detail = "form" | "length" | "width" | "height" | "tank" | "consumption";
@@ -18,7 +19,8 @@ const details: Detail[] = [
   "consumption",
 ];
 
-const VehicleFeatures: FC<IVehicleFeaturesProps> = ({ data }) => {
+const VehicleFeatures: FC<IVehicleFeaturesProps> = () => {
+  const data = useVehicleDataContext();
   const options = getOptionList(data);
 
   return (

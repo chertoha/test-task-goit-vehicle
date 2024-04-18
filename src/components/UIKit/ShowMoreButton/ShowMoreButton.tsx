@@ -3,6 +3,7 @@ import { FC } from "react";
 import Modal from "../Modal";
 import VehicleInfo from "components/VehicleInfo";
 import { Vehicle } from "types/entities";
+import VehicleDataProvider from "components/VehicleDataProvider";
 
 interface IShowMoreButtonProps {
   title: string;
@@ -11,7 +12,6 @@ interface IShowMoreButtonProps {
 
 const ShowMoreButton: FC<IShowMoreButtonProps> = ({ title, vehicle }) => {
   const { open, isOpen, close } = useModal();
-
   return (
     <>
       <button
@@ -26,7 +26,10 @@ const ShowMoreButton: FC<IShowMoreButtonProps> = ({ title, vehicle }) => {
         close={close}
         isOpen={isOpen}
       >
-        <VehicleInfo data={vehicle} />
+        <VehicleDataProvider data={vehicle}>
+          <VehicleInfo />
+          {/* <VehicleInfo data={vehicle} /> */}
+        </VehicleDataProvider>
       </Modal>
     </>
   );

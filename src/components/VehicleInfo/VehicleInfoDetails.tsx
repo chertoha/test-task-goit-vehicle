@@ -2,17 +2,16 @@ import { FC, useState } from "react";
 import VehicleFeatures from "./VehicleFeatures";
 import VehicleReviews from "./VehicleReviews";
 import BookForm from "../BookForm/BookForm";
-import { Vehicle } from "types/entities";
+// import { Vehicle } from "types/entities";
 
 interface IVehicleInfoDetailsProps {
-  data: Vehicle;
+  // data: Vehicle;
 }
 
-const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = ({ data }) => {
+const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = () => {
   const [isFeatures, setIsFeatures] = useState(true);
   const switchToFeatures = () => setIsFeatures(true);
   const switchToReviews = () => setIsFeatures(false);
-
   return (
     <div className="">
       <ul className="flex gap-x-10 border-b border-black/20 ">
@@ -41,9 +40,11 @@ const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = ({ data }) => {
       <div className="flex gap-x-6 mt-[44px]">
         <div className="w-full">
           {isFeatures ? (
-            <VehicleFeatures data={data} />
+            // <VehicleFeatures data={data} />
+            <VehicleFeatures />
           ) : (
-            <VehicleReviews reviews={data.reviews} />
+            // <VehicleReviews reviews={data.reviews} />
+            <VehicleReviews />
           )}
         </div>
         <div className="w-full ">
