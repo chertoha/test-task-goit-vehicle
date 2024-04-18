@@ -3,7 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ReactComponent as CalendarIcon } from "assets/icons/calendar.svg";
 import { FC } from "react";
 import { useFormikContext } from "formik";
-import { BookFormValues } from "components/BookForm/BookForm";
+import { BookFormValues } from "types/formValues";
 
 interface IDateRangePickerProps {
   name: string;

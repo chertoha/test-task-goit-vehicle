@@ -1,11 +1,11 @@
 import { SessionStorage } from "services/storage";
-import { BookFormValues } from "./BookForm";
 import { FC, useEffect } from "react";
 import { useFormikContext } from "formik";
 import InputField from "components/UIKit/InputField";
 import AreaField from "components/UIKit/AreaField";
 import DateRangePicker from "components/UIKit/DateRangePicker";
 import Spinner from "components/UIKit/Spinner";
+import { BookFormValues } from "types/formValues";
 
 interface IBookFormFieldsProps {
   session: SessionStorage<BookFormValues>;
