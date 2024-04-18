@@ -1,15 +1,9 @@
 import LocationLabel from "components/UIKit/LocationLabel";
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
-import { FC } from "react";
 import VehicleInfoDetails from "./VehicleInfoDetails";
-// import { Vehicle } from "types/entities";
 import { useVehicleDataContext } from "hooks/useVehicleDataContext";
 
-interface IVehicleInfoProps {
-  // data: Vehicle;
-}
-
-const VehicleInfo: FC<IVehicleInfoProps> = () => {
+const VehicleInfo = () => {
   const { name, reviews, rating, location, price, gallery, description } =
     useVehicleDataContext();
   return (
@@ -43,7 +37,6 @@ const VehicleInfo: FC<IVehicleInfoProps> = () => {
 
       <div className="mt-[44px]">
         <VehicleInfoDetails />
-        {/* <VehicleInfoDetails data={data} /> */}
       </div>
     </div>
   );
