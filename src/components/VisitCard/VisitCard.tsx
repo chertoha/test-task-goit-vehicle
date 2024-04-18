@@ -1,4 +1,4 @@
-import avatar from "/avatar-grey-circle.png";
+import avatar from "/avatar-grey-circle.jpg";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ const VisitCard = () => {
             <p className="body-1 mt-1 ">Web developer</p>
           </div>
 
-          <div className=" size-[220px]">
+          <div className=" size-[220px] overflow-hidden rounded-full">
             <img
               src={avatar}
               className="block w-full object-cover"
