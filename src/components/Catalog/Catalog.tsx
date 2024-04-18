@@ -11,6 +11,7 @@ import { initialFilterValues } from "utils/initialFormValues";
 import { FilterValues } from "types/formValues";
 import { checkListDuplicates } from "utils/checkListDuplicates";
 import Spinner from "components/UIKit/Spinner";
+import Toggler from "components/Toggler";
 
 const Catalog = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
@@ -61,10 +62,12 @@ const Catalog = () => {
         <div className="xl:flex items-start gap-x-16  ">
           <aside className="shrink-0  md:w-[360px] self-stretch">
             <div className="sticky top-10">
-              <Filter
-                onSubmit={filterQuerySubmitHandler}
-                initialValues={filterQuery}
-              />
+              <Toggler title="Filter">
+                <Filter
+                  onSubmit={filterQuerySubmitHandler}
+                  initialValues={filterQuery}
+                />
+              </Toggler>
             </div>
           </aside>
 

@@ -1,9 +1,10 @@
 import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+import { TogglerContext } from "components/Toggler/Toggler";
 import FilterCheckbox from "components/UIKit/FilterCheckbox";
 import FilterRadio from "components/UIKit/FilterRadio";
 import InputField from "components/UIKit/InputField";
 import { Formik } from "formik";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { FilterValues } from "types/formValues";
 
 interface IFilterProps {
@@ -12,8 +13,11 @@ interface IFilterProps {
 }
 
 const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
+  const closeToggler = useContext(TogglerContext);
+
   const onSubmitHandler = (values: FilterValues) => {
     onSubmit(values);
+    closeToggler();
   };
 
   return (
