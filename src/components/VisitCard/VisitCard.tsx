@@ -15,6 +15,7 @@ const VisitCard = () => {
           <div className=" size-[220px] overflow-hidden rounded-full">
             <img
               src={avatar}
+              alt="Anton Chertok"
               className="block w-full object-cover"
             />
           </div>
@@ -24,7 +25,7 @@ const VisitCard = () => {
           <a
             href="https://www.linkedin.com/in/anton-chertok/"
             target="_blank"
-            className=""
+            aria-label="Linkedin"
           >
             <FaLinkedin className="size-[36px]" />
           </a>
@@ -32,7 +33,7 @@ const VisitCard = () => {
           <a
             href="https://github.com/chertoha"
             target="_blank"
-            className=""
+            aria-label="Github"
           >
             <FaGithub className="size-[36px]" />
           </a>
