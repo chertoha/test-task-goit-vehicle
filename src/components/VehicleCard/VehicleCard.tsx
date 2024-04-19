@@ -19,6 +19,7 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
     <div className="p-6 flex max-xl:flex-col gap-x-6 border border-black/20 rounded-[20px]">
       <div className="shrink-0 xl:w-[290px] h-[310px] overflow-hidden rounded-[10px]">
         <img
+          loading="lazy"
           src={vehicle.gallery[0]}
           alt={vehicle.name}
           className="w-full h-full object-cover"
