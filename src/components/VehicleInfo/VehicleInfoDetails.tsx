@@ -2,6 +2,7 @@ import VehicleFeatures from "./VehicleFeatures";
 import VehicleReviews from "./VehicleReviews";
 import BookForm from "../BookForm/BookForm";
 import { useState } from "react";
+import "./VehicleInfo.styled.css";
 
 const VehicleInfoDetails = () => {
   const [isFeatures, setIsFeatures] = useState(true);
@@ -13,8 +14,7 @@ const VehicleInfoDetails = () => {
         <li>
           <button
             type="button"
-            className={`relative heading-2  pb-6 after:absolute after:left-0 after:bottom-[-3px] after:h-[5px] after:w-full after:bg-accent
-            ${isFeatures ? "after:block" : "after:hidden"}`}
+            className={`heading-2 details-button ${isFeatures ? "after:block" : "after:hidden"}`}
             onClick={switchToFeatures}
           >
             Features
@@ -23,8 +23,7 @@ const VehicleInfoDetails = () => {
         <li>
           <button
             type="button"
-            className={`relative heading-2  pb-6 after:absolute after:left-0 after:bottom-[-3px] after:h-[5px] after:w-full after:bg-accent
-            ${!isFeatures ? "after:block" : "after:hidden"}`}
+            className={`heading-2 details-button ${!isFeatures ? "after:block" : "after:hidden"}`}
             onClick={switchToReviews}
           >
             Reviews

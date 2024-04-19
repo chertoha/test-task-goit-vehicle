@@ -1,0 +1,7 @@
+.nav-link {
+  @apply block relative  pb-6 after:hidden after:absolute after:left-0 after:bottom-[-3px] after:h-[3px] md:after:h-[5px] after:w-full after:bg-accent  [&.active]:after:block;
+}
+
+.nav-list {
+  @apply flex gap-x-10 border-b border-black/20  max-md:gap-x-3;
+}
