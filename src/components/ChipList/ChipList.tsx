@@ -14,7 +14,6 @@ const ChipList: FC<IChipListProps> = ({ options }) => {
           <li key={key}>
             <Chip
               iconKey={key}
-              title={key}
               value={value}
             />
           </li>
