@@ -1,13 +1,9 @@
 import VehicleFeatures from "./VehicleFeatures";
 import VehicleReviews from "./VehicleReviews";
 import BookForm from "../BookForm/BookForm";
-import { FC, useState } from "react";
+import { useState } from "react";
 
-interface IVehicleInfoDetailsProps {
-  // data: Vehicle;
-}
-
-const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = () => {
+const VehicleInfoDetails = () => {
   const [isFeatures, setIsFeatures] = useState(true);
   const switchToFeatures = () => setIsFeatures(true);
   const switchToReviews = () => setIsFeatures(false);
@@ -37,9 +33,7 @@ const VehicleInfoDetails: FC<IVehicleInfoDetailsProps> = () => {
       </ul>
 
       <div className="flex gap-x-6 mt-[44px] max-xl:flex-col max-xl:gap-y-6">
-        <div className="w-full">
-          {isFeatures ? <VehicleFeatures /> : <VehicleReviews />}
-        </div>
+        <div className="w-full">{isFeatures ? <VehicleFeatures /> : <VehicleReviews />}</div>
         <div className="w-full ">
           <BookForm />
         </div>

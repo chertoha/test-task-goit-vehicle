@@ -1,12 +1,11 @@
-import { FC } from "react";
-
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
 import ShowMoreButton from "components/UIKit/ShowMoreButton";
-import { Vehicle } from "types/entities";
-import { getOptionList } from "utils/getOptionList";
 import ChipList from "components/ChipList";
 import FavoriteButton from "components/FavoriteButton";
+import { FC } from "react";
+import { Vehicle } from "types/entities";
+import { getOptionList } from "utils/getOptionList";
 
 interface IVehicleCardProps {
   vehicle: Vehicle;
@@ -19,6 +18,7 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
     <div className="p-6 flex max-xl:flex-col gap-x-6 border border-black/20 rounded-[20px]">
       <div className="shrink-0 xl:w-[290px] h-[310px] overflow-hidden rounded-[10px]">
         <img
+          loading="lazy"
           src={vehicle.gallery[0]}
           alt={vehicle.name}
           className="w-full h-full object-cover"

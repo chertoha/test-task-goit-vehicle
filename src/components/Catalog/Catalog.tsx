@@ -1,14 +1,14 @@
 import Filter from "components/Filter";
-import { useGetFilteredAdvertsQuery } from "../../redux/adverts/advertsApi";
+import Spinner from "components/UIKit/Spinner";
+import Toggler from "components/Toggler";
 import CatalogCardList from "components/CatalogCardList";
+import { useGetFilteredAdvertsQuery } from "../../redux/adverts/advertsApi";
 import { useEffect, useState } from "react";
 import { DEFAULT_QUERY_LIMIT, DEFAULT_QUERY_PAGE } from "services/config";
 import { Vehicle } from "types/entities";
 import { initialFilterValues } from "utils/initialFormValues";
 import { FilterValues } from "types/formValues";
 import { checkListDuplicates } from "utils/checkListDuplicates";
-import Spinner from "components/UIKit/Spinner";
-import Toggler from "components/Toggler";
 
 const Catalog = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);

@@ -1,14 +1,8 @@
-// import { VehicleReview } from "types/entities";
 import VehicleReviewCard from "./VehicleReviewCard";
-import { FC } from "react";
 import { nanoid } from "nanoid";
 import { useVehicleDataContext } from "hooks/useVehicleDataContext";
 
-interface IVehicleReviewsProps {
-  // reviews: VehicleReview[];
-}
-
-const VehicleReviews: FC<IVehicleReviewsProps> = () => {
+const VehicleReviews = () => {
   const { reviews } = useVehicleDataContext();
   return (
     <div>

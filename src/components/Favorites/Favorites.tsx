@@ -1,6 +1,6 @@
+import FavoriteCardList from "components/FavoriteCardList";
 import { useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/favorites/selectors";
-import FavoriteCardList from "components/FavoriteCardList";
 
 const Favorites = () => {
   const favorites = useSelector(selectFavorites);
@@ -14,9 +14,7 @@ const Favorites = () => {
           {favorites.length > 0 ? (
             <FavoriteCardList list={favorites} />
           ) : (
-            <p className="heading-2 flex-center py-20">
-              You have no favorites yet
-            </p>
+            <p className="heading-2 flex-center py-20">You have no favorites yet</p>
           )}
         </div>
       </div>

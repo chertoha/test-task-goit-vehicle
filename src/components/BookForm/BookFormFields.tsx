@@ -1,10 +1,10 @@
-import { SessionStorage } from "services/storage";
-import { FC, useEffect } from "react";
-import { useFormikContext } from "formik";
 import InputField from "components/UIKit/InputField";
 import AreaField from "components/UIKit/AreaField";
 import DateRangePicker from "components/UIKit/DateRangePicker";
 import Spinner from "components/UIKit/Spinner";
+import { SessionStorage } from "services/storage";
+import { FC, useEffect } from "react";
+import { useFormikContext } from "formik";
 import { BookFormValues } from "types/formValues";
 
 interface IBookFormFieldsProps {
@@ -12,8 +12,7 @@ interface IBookFormFieldsProps {
 }
 
 const BookFormFields: FC<IBookFormFieldsProps> = ({ session }) => {
-  const { values, handleSubmit, isSubmitting } =
-    useFormikContext<BookFormValues>();
+  const { values, handleSubmit, isSubmitting } = useFormikContext<BookFormValues>();
 
   useEffect(() => {
     session.set(values);
