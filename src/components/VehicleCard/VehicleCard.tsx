@@ -20,7 +20,10 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
       <div className="shrink-0 xl:w-[290px] h-[310px] overflow-hidden rounded-[10px]">
         <img
           src={vehicle.gallery[0]}
+          alt={vehicle.name}
           className="w-full h-full object-cover"
+          width="290"
+          height="310"
         />
       </div>
 
@@ -44,9 +47,7 @@ const VehicleCard: FC<IVehicleCardProps> = ({ vehicle }) => {
           <LocationLabel location={vehicle.location} />
         </div>
 
-        <p className="trim-text-one-row mt-6 xl:w-[525px]">
-          {vehicle.description}
-        </p>
+        <p className="trim-text-one-row mt-6 xl:w-[525px]">{vehicle.description}</p>
 
         <div className="mt-6">
           <ChipList options={options} />
