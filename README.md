@@ -1,30 +1,60 @@
-# React + TypeScript + Vite
+#Vehicle rent service
+Web service for renting better vehicle for your out door trips
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Environment Variables
 
-Currently, two official plugins are available:
+To run this project, you will need to add the following environment variables to your .env file
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`VITE_API_URL`
 
-## Expanding the ESLint configuration
+## Install and run
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+git clone https://github.com/chertoha/test-task-goit-vehicle.git
+npm i
+npm run dev
 
-- Configure the top-level `parserOptions` property like this:
+## Tech stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Vite
+- React.js
+- TypeScript
+- Redux toolkit
+- RTK Query
+- React Router
+- Tailwind css
+- Formik
+- Axios
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Authors
+
+- [Anton Chertok](https://github.com/chertoha)
+
+## Features
+
+- adaptive layout
+- sticky filter
+- search with options
+- clearable filter
+- favorites
+- book form validation
+- date range picker
+
+## Feedback
+
+If you have any feedback, please reach out to us at a.chertok@akatech.com.ua
+
+###
+
+![Catalog page](/screenshots/catalog_page.jpg)
+
+###
+
+![Favorites page](/screenshots/favorites_page.jpg)
+
+###
+
+![Modal window](/screenshots/modal_window.jpg)
+
+###
+
+![Adaptive filter](/screenshots/adaptive_filter.jpg)
