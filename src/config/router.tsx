@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
 import Layout from "components/Layout";
 import CatalogPage from "pages/CatalogPage";
 import HomePage from "pages/HomePage";
 import FavoritesPages from "pages/Favorites/FavoritesPages";
+import { createBrowserRouter } from "react-router-dom";
 
 export const ROUTES = {
   HOME: "/",

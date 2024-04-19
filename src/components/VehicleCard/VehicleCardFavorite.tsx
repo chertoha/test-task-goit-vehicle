@@ -1,11 +1,11 @@
-import { FC } from "react";
 import ReviewsLabel from "components/UIKit/ReviewsLabel";
 import LocationLabel from "components/UIKit/LocationLabel";
 import ShowMoreButton from "components/UIKit/ShowMoreButton";
-import { Vehicle } from "types/entities";
-import { getOptionList } from "utils/getOptionList";
 import ChipList from "components/ChipList";
 import FavoriteButton from "components/FavoriteButton";
+import { FC } from "react";
+import { Vehicle } from "types/entities";
+import { getOptionList } from "utils/getOptionList";
 
 interface IVehicleCardFavoriteProps {
   vehicle: Vehicle;

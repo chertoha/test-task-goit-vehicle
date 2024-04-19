@@ -1,12 +1,12 @@
-import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
-import { TogglerContext } from "components/Toggler/Toggler";
 import InputField from "components/UIKit/InputField";
-import { Formik } from "formik";
-import { FC, useContext } from "react";
-import { FilterValues } from "types/formValues";
 import FilterOptions from "./FilterOptions";
 import FilterTypes from "./FilterTypes";
 import FilterClear from "./FilterClear";
+import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
+import { TogglerContext } from "components/Toggler/Toggler";
+import { Formik } from "formik";
+import { FC, useContext } from "react";
+import { FilterValues } from "types/formValues";
 
 interface IFilterProps {
   onSubmit: (values: FilterValues) => void;

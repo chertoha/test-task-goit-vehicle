@@ -1,6 +1,5 @@
 import axios from "axios";
 import type { AxiosRequestConfig, AxiosError } from "axios";
-
 import type { BaseQueryFn } from "@reduxjs/toolkit/query";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
