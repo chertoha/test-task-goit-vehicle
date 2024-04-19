@@ -3,7 +3,6 @@ import { Icon, IconKeyType } from "../Icon/Icon";
 
 interface IChipProps {
   iconKey: string;
-  // title: string;
   value: number | string;
 }
 
@@ -29,9 +28,7 @@ const Chip: FC<IChipProps> = ({ iconKey, value }) => {
           </span>
         ) : (
           <span className="label">
-            <span className="capitalize">
-              {optionsFilter.includes(iconKey) ? title : value}
-            </span>
+            <span className="capitalize">{optionsFilter.includes(iconKey) ? title : value}</span>
           </span>
         )}
       </div>
