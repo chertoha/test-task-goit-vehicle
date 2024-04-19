@@ -1,11 +1,12 @@
 import { ReactComponent as LocationIcon } from "assets/icons/location.svg";
 import { TogglerContext } from "components/Toggler/Toggler";
-import FilterCheckbox from "components/UIKit/FilterCheckbox";
-import FilterRadio from "components/UIKit/FilterRadio";
 import InputField from "components/UIKit/InputField";
 import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { FilterValues } from "types/formValues";
+import FilterOptions from "./FilterOptions";
+import FilterTypes from "./FilterTypes";
+import FilterClear from "./FilterClear";
 
 interface IFilterProps {
   onSubmit: (values: FilterValues) => void;
@@ -43,91 +44,31 @@ const Filter: FC<IFilterProps> = ({ onSubmit, initialValues }) => {
             <h2 className="heading-4 text-dark">Filters</h2>
             <div className="mt-[14px]">
               <h3 className="heading-2">Vehicle equipment</h3>
-
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-2 md:grid-cols-3  gap-x-[10px] gap-y-2">
-                  <li>
-                    <FilterCheckbox
-                      iconKey="airConditioner"
-                      name="options"
-                      title="AC"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterCheckbox
-                      iconKey="transmission"
-                      name="options"
-                      title="automatic"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterCheckbox
-                      iconKey="kitchen"
-                      name="options"
-                      title="kitchen"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterCheckbox
-                      iconKey="tv"
-                      name="options"
-                      title="TV"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterCheckbox
-                      iconKey="shower"
-                      name="options"
-                      title="shower"
-                    />
-                  </li>
-                </ul>
+                <FilterOptions />
               </div>
             </div>
 
             <div className="mt-8">
               <h3 className="heading-2">Vehicle type</h3>
-
               <div className="mt-6 pt-6 border-t border-black/10">
-                <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-[10px] gap-y-2">
-                  <li>
-                    <FilterRadio
-                      iconKey="panelTruck"
-                      name="form"
-                      title="panel truck"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterRadio
-                      iconKey="fullyIntegrated"
-                      name="form"
-                      title="Fully Integrated"
-                    />
-                  </li>
-
-                  <li>
-                    <FilterRadio
-                      iconKey="alcove"
-                      name="form"
-                      title="alcove"
-                    />
-                  </li>
-                </ul>
+                <FilterTypes />
               </div>
             </div>
           </div>
 
-          <button
-            type="submit"
-            className="button-primary px-[60px] mt-16"
-          >
-            Search
-          </button>
+          <div className="relative mt-16 inline-flex">
+            <button
+              type="submit"
+              className="button-primary px-[60px] "
+            >
+              Search
+            </button>
+
+            <div className="absolute top-1/2 -right-5 -translate-y-1/2 translate-x-full">
+              <FilterClear />
+            </div>
+          </div>
         </form>
       )}
     </Formik>

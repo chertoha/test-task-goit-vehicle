@@ -10,6 +10,5 @@ export const initialBookFormValues: BookFormValues = {
 export const initialFilterValues: FilterValues = {
   location: "",
   options: [],
-  //   form: "panelTruck",
   form: "",
 };
