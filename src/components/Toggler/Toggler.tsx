@@ -1,5 +1,5 @@
 import { useWindowSize } from "hooks/useWindowSize";
-import { FC, ReactNode, createContext, useEffect, useState } from "react";
+import { FC, ReactNode, createContext, useState } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
 
@@ -16,14 +16,6 @@ const Toggler: FC<ITogglerProps> = ({ children, title }) => {
 
   const toggle = () => setIsOpen(p => !p);
   const close = () => setIsOpen(false);
-
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.classList.add("no-scroll");
-  //   } else {
-  //     document.body.classList.remove("no-scroll");
-  //   }
-  // }, [isOpen]);
 
   return !isDesktop ? (
     <div className="relative">
