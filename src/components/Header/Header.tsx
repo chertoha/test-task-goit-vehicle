@@ -1,15 +1,16 @@
 import { ROUTES } from "config/router";
 import { NavLink } from "react-router-dom";
+import "./Header.styled.css";
 
 const Header = () => {
   return (
     <header className="pt-8">
       <div className="container-default">
         <nav>
-          <ul className="flex gap-x-10 border-b border-black/20  max-md:gap-x-3">
+          <ul className="nav-list">
             <li>
               <NavLink
-                className="block relative heading-2 pb-6 after:hidden after:absolute after:left-0 after:bottom-[-3px] after:h-[3px] md:after:h-[5px] after:w-full after:bg-accent  [&.active]:after:block"
+                className="heading-2 nav-link"
                 to={ROUTES.HOME}
               >
                 Home
@@ -18,7 +19,7 @@ const Header = () => {
 
             <li>
               <NavLink
-                className="block relative heading-2 pb-6 after:hidden after:absolute after:left-0 after:bottom-[-3px] after:h-[3px] md:after:h-[5px] after:w-full after:bg-accent  [&.active]:after:block"
+                className="heading-2 nav-link"
                 to={ROUTES.CATALOG}
               >
                 Catalog
@@ -27,7 +28,7 @@ const Header = () => {
 
             <li>
               <NavLink
-                className="block relative heading-2 pb-6 after:hidden after:absolute after:left-0 after:bottom-[-3px]  after:h-[3px] md:after:h-[5px] after:w-full after:bg-accent  [&.active]:after:block"
+                className="heading-2 nav-link"
                 to={ROUTES.FAVORITES}
               >
                 Favorites
