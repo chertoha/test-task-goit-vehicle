@@ -17,6 +17,8 @@ const VisitCard = () => {
               src={avatar}
               alt="Anton Chertok"
               className="block w-full object-cover"
+              height={220}
+              width={220}
             />
           </div>
         </div>
