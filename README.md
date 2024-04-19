@@ -46,16 +46,16 @@ If you have any feedback, please reach out to us at a.chertok@akatech.com.ua
 
 ###
 
-![Catalog page](./screenshots/catalog_page.jpg)
+![Catalog page](./assets/catalog_page.jpg)
 
 ###
 
-![Favorites page](./screenshots/favorites_page.jpg)
+![Favorites page](./assets/favorites_page.jpg)
 
 ###
 
-![Modal window](./screenshots/modal_window.jpg)
+![Modal window](./assets/modal_window.jpg)
 
 ###
 
-![Adaptive filter](./screenshots/adaptive_filter.jpg)
+![Adaptive filter](./assets/adaptive_filter.jpg)
