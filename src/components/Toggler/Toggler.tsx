@@ -17,13 +17,13 @@ const Toggler: FC<ITogglerProps> = ({ children, title }) => {
   const toggle = () => setIsOpen(p => !p);
   const close = () => setIsOpen(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.classList.add("no-scroll");
+  //   } else {
+  //     document.body.classList.remove("no-scroll");
+  //   }
+  // }, [isOpen]);
 
   return !isDesktop ? (
     <div className="relative">
@@ -41,11 +41,9 @@ const Toggler: FC<ITogglerProps> = ({ children, title }) => {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } border-2 border-dark w-full rounded-xl absolute bg-white p-4`}
+        } border-2 border-dark w-full rounded-xl absolute bg-white p-4 `}
       >
-        <TogglerContext.Provider value={close}>
-          {children}
-        </TogglerContext.Provider>
+        <TogglerContext.Provider value={close}>{children}</TogglerContext.Provider>
       </div>
     </div>
   ) : (

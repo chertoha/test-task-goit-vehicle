@@ -3,14 +3,15 @@ import { Icon, IconKeyType } from "../Icon/Icon";
 
 interface IChipProps {
   iconKey: string;
-  title: string;
+  // title: string;
   value: number | string;
 }
 
 const optionsFilter = ["gas", "water"];
 
-const Chip: FC<IChipProps> = ({ iconKey, title, value }) => {
-  const ChipIcon = Icon[iconKey as IconKeyType];
+const Chip: FC<IChipProps> = ({ iconKey, value }) => {
+  const ChipIcon = Icon[iconKey as IconKeyType].icon;
+  const title = Icon[iconKey as IconKeyType].title;
 
   return (
     value !== 0 && (

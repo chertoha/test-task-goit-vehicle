@@ -1,25 +1,24 @@
-import { ChangeEvent, FC, useState } from "react";
+import { FC } from "react";
 import { Icon, IconKeyType } from "../Icon/Icon";
-import { Field, useField } from "formik";
+import { Field, useField, useFormikContext } from "formik";
+import { FilterValues } from "types/formValues";
 
 interface IFilterCheckboxProps {
   name: string;
   iconKey: string;
-  title: string;
 }
 
-const FilterCheckbox: FC<IFilterCheckboxProps> = ({
-  iconKey,
-  title,
-  ...props
-}) => {
+const FilterCheckbox: FC<IFilterCheckboxProps> = ({ iconKey, ...props }) => {
   const [field] = useField(props);
-  const [isChecked, setIsChecked] = useState(false);
+  const { values } = useFormikContext<FilterValues>();
 
-  const LabelIcon = Icon[iconKey as IconKeyType];
+  const LabelIcon = Icon[iconKey as IconKeyType].icon;
+  const title = Icon[iconKey as IconKeyType].title;
+
+  const isChecked = values.options.includes(iconKey);
   return (
     <label
-      className={`label transition-default cursor-pointer flex flex-col h-[95px] border   rounded-[10px] justify-center items-center gap-y-2 ${
+      className={`label transition-default cursor-pointer flex flex-col h-[95px] border-2 rounded-[10px] justify-center items-center gap-y-2 ${
         isChecked ? "border-accent" : "border-black/20"
       }`}
     >
@@ -29,10 +28,6 @@ const FilterCheckbox: FC<IFilterCheckboxProps> = ({
         value={iconKey}
         type="checkbox"
         checked={isChecked}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => {
-          field.onChange(e);
-          setIsChecked(p => !p);
-        }}
       />
 
       {LabelIcon && (

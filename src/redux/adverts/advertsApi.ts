@@ -2,12 +2,13 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 import { axiosBaseQuery } from "../../services/api";
 import { Vehicle } from "types/entities";
 import { DEFAULT_QUERY_LIMIT, DEFAULT_QUERY_PAGE } from "services/config";
+import { customResponseTransform } from "utils/customResponseTransform";
 
-type AdvertsQuery = {
+export type AdvertsQuery = {
   page: number;
   location: string;
   form: string;
-  options: unknown;
+  options: string[];
 };
 type AdvertsCountQuery = Omit<AdvertsQuery, "page">;
 
@@ -42,6 +43,17 @@ export const advertsApi = createApi({
       }),
       transformResponse: (response: Vehicle[]) => response.length,
     }),
+
+    getFilteredAdverts: builder.query<{ vehicles: Vehicle[]; count: number }, AdvertsQuery>({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      query: _args => ({
+        url: "/advert",
+        method: "GET",
+      }),
+      transformResponse: (response: Vehicle[], _meta, args) => {
+        return customResponseTransform(response, args);
+      },
+    }),
   }),
 });
 
@@ -49,4 +61,5 @@ export const {
   useGetAdvertsQuery,
   useLazyGetAdvertsQuery,
   useGetAdvertsCountQuery,
+  useGetFilteredAdvertsQuery,
 } = advertsApi;
